@@ -1,0 +1,51 @@
+Dec 6 2018
+What I want:
+1. Show FDDL performs worse than our algorithm
+What I did:
+I run fddl with new setting (l1 type of outlier)
+	Problem:
+	fddl performance as high as 0.04
+I need to check if my loading data is wrong
+I checked 0 percent outlier, it was right and I tune FDDL & LRSDL paprameters
+
+
+
+Dec 7 2018
+What I want:
+1. Show FDDL performs worse than our algorithm
+What I did:
+I checked how the performance is fddl with 10% outlier
+    Problem:
+    It is really 0.02 accuracy using the method described in the paper of Li&Fu
+I change the Pixel to random value first, and then normalize it
+I check the performance of FDDL and LRSDL with 10% outlier
+    Problem:
+    LRSDL has performance not stable 0.7889 0.0123 0. 0234
+I fixed a bug in lrsdl, the input for myshuffle
+I checked the performance of f1
+    Problem: how the choose the dimension Ptilde is hard, since Li&Fu are wrong
+I followed Li&Fu to take all the dimensions, then tuning the dimension
+    Problem: f1 performance is worse than fddl
+I need to increase the power of outlier, I double check Li&Fu's paer
+    Problem: their normalization is not make the sample norm to 1, but /255
+I fix the bug in the code, I hope to repeat their results
+I will start tuning FDDL again
+Li & Fu are liers!
+
+
+Apr 12 2018
+remove the normalization part for l1 type of outliers
+the corrupted pixels all set to 255
+re-run fddl and lrsdl to see the result, which is very slow
+
+Next step:
+run f1 f2 srrs1 to compare the result
+but which dimension to choose is a question
+if not beating fddl, only do l21 
+
+further steps:
+coil20 data set result
+
+
+
+

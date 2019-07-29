@@ -1,0 +1,9 @@
+0000000000000000000000000000000000000000 c99b0b0451e1657a2d0a17c3edfaf2a3c34bb2a8 Chen Hao <chenhao1@umbc.edu> 1546903687 -0500	clone: from https://chenhao1@bitbucket.org/chenhao1/1_irpcafishercleanl1.git
+c99b0b0451e1657a2d0a17c3edfaf2a3c34bb2a8 2a2b0e2f2f65f6eeb12c42a5f795dfaf1089b993 Chen Hao <chenhao1@umbc.edu> 1546903741 -0500	checkout: moving from master to E=255
+2a2b0e2f2f65f6eeb12c42a5f795dfaf1089b993 7dc240782690e835bd4a9339a573f3c4d5b76858 Chen Hao <chenhao1@umbc.edu> 1563297885 -0400	commit: deleted some not useful files; keep l1 as the main to run
+7dc240782690e835bd4a9339a573f3c4d5b76858 158b0d7e34e46f58c17c0b26ae2a3c09a27d7a1d Chen Hao <chenhao1@umbc.edu> 1563666329 -0400	commit: ready to merge to master branch
+158b0d7e34e46f58c17c0b26ae2a3c09a27d7a1d c99b0b0451e1657a2d0a17c3edfaf2a3c34bb2a8 Chen Hao <chenhao1@umbc.edu> 1563666343 -0400	checkout: moving from E=255 to master
+c99b0b0451e1657a2d0a17c3edfaf2a3c34bb2a8 b82c41f8ead4c10461ff30ea61acfda1b47f8262 Chen Hao <chenhao1@umbc.edu> 1563666358 -0400	pull: Fast-forward
+b82c41f8ead4c10461ff30ea61acfda1b47f8262 eda7f9d9157a21ed029e8b275182fef4f2a02e90 Chen Hao <chenhao1@umbc.edu> 1563666431 -0400	commit (merge): meged branch to master
+eda7f9d9157a21ed029e8b275182fef4f2a02e90 da46b02034937b16eeea443f87b7532c4af3037a Chen Hao <chenhao1@umbc.edu> 1564059289 -0400	commit: modifying the merged files to make it look right
+da46b02034937b16eeea443f87b7532c4af3037a 821574768b3315c9cea7c8b686d923793b0228ab Chen Hao <chenhao1@umbc.edu> 1564237507 -0400	commit: added the gpu code; finished loading all the datasets
