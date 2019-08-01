@@ -8,32 +8,32 @@ if nargin <1 || optdata.ind_dataset == 0
     X.label(1,1:900) = sum(kron(diag([1,2,3]), ones(1,300)),1);    
     X.label(2,1:900) = zeros(1,900);
     
-    Xtest.data = dattest; % test is cv
+    Xcv.data = dattest; % test is cv
     ltest = size(dattest,2);
-    Xtest.label = zeros(2, ltest);
-    Xtest.label(1,1:ltest) = sum(kron(diag([1,2,3]), ones(1,ltest/3)),1);
-    Xtest.label(2,1:ltest) = zeros(1,ltest);
+    Xcv.label = zeros(2, ltest);
+    Xcv.label(1,1:ltest) = sum(kron(diag([1,2,3]), ones(1,ltest/3)),1);
+    Xcv.label(2,1:ltest) = zeros(1,ltest);
     
-    Xcv.data = datcv; % cv is test, then cv has more data
+    Xtest.data = datcv; % cv is test, then cv has more data
     lcv = size(datcv,2);
-    Xcv.label = zeros(2, lcv);
-    Xcv.label(1,1:lcv) = sum(kron(diag([1,2,3]), ones(1,lcv/3)),1);
-    Xcv.label(2,1:lcv) = zeros(1,lcv);
+    Xtest.label = zeros(2, lcv);
+    Xtest.label(1,1:lcv) = sum(kron(diag([1,2,3]), ones(1,lcv/3)),1);
+    Xtest.label(2,1:lcv) = zeros(1,lcv);
 
 elseif optdata.ind_dataset == 1    
     load('ExtendedYaleB_front_32x32.mat');     
-    ntest = 13;  % 13 samples per class -testing
+    ncv = 0;  % 13 samples per class -testing
     ntrain = 30; % 40 samples per class -training
 
     % adding outlider is moved outside this function
     
     % data partition
-    Xtest.data = [];
-    Xtest.label = [];
-    X.data = [];
-    X.label = [];
     Xcv.data = [];
     Xcv.label = [];
+    X.data = [];
+    X.label = [];
+    Xtest.data = [];
+    Xtest.label = [];
     Labels = [labels;1:length(labels)]; % adding index (primary key) for all the data    
 
     for i = 1:max(labels)              
@@ -43,36 +43,35 @@ elseif optdata.ind_dataset == 1
         rng(optdata.rng)
         ind = randperm(endpoint - startpoint+1); % some classes has 64 samples, as few as 59
         
-        ind_test = startpoint-1+ ind(1:ntest);
-        ind_train = startpoint-1+ ind(ntest+1: ntest+ntrain); 
-        ind_cv = startpoint-1+ ind(ntest+ntrain+1: end);
+        ind_test = startpoint-1+ ind(1:ncv);
+        ind_train = startpoint-1+ ind(ncv+1: ncv+ntrain); 
+        ind_cv = startpoint-1+ ind(ncv+ntrain+1: end);
 
-        Xtest.data = [Xtest.data, data(:, ind_test)];
-        Xtest.label = [Xtest.label, Labels(:,ind_test)];
+        Xcv.data = [Xcv.data, data(:, ind_test)];
+        Xcv.label = [Xcv.label, Labels(:,ind_test)];
         
         X.data = [X.data, data(:, ind_train)];
         X.label = [X.label, Labels(:,ind_train)];                
       
-        Xcv.data = [Xcv.data, data(:, ind_cv)];
-        Xcv.label = [Xcv.label, Labels(:,ind_cv)];        
+        Xtest.data = [Xtest.data, data(:, ind_cv)];
+        Xtest.label = [Xtest.label, Labels(:,ind_cv)];        
     end 
     T = 0; 
     
 elseif optdata.ind_dataset == 2   
-%     load('coil20un'); %%%%%%%%% What is this?
     load('coil20');
-    ntest = 11;  % 11 samples per class -testing
-    ntrain = 50; % 50 samples per class -training
+    ncv = 0;  % 11 samples per class -testing
+    ntrain = 40; % 50 samples per class -training
 
     % adding outlider is moved outside this function
     
     % data partition
-    Xtest.data = [];
-    Xtest.label = [];
-    X.data = [];
-    X.label = [];
     Xcv.data = [];
     Xcv.label = [];
+    X.data = [];
+    X.label = [];
+    Xtest.data = [];
+    Xtest.label = [];
     Labels = [label;1:length(label)]; % adding index (primary key) for all the data    
 
     for i = 1:max(label)              
@@ -82,23 +81,23 @@ elseif optdata.ind_dataset == 2
         rng(optdata.rng)
         ind = randperm(endpoint - startpoint+1); % some classes has 64 samples, as few as 59
         
-        ind_test = startpoint-1+ ind(1:ntest);
-        ind_train = startpoint-1+ ind(ntest+1: ntest+ntrain); 
-        ind_cv = startpoint-1+ ind(ntest+ntrain+1: end);
+        ind_test = startpoint-1+ ind(1:ncv);
+        ind_train = startpoint-1+ ind(ncv+1: ncv+ntrain); 
+        ind_cv = startpoint-1+ ind(ncv+ntrain+1: end);
 
-        Xtest.data = [Xtest.data, data(:, ind_test)];
-        Xtest.label = [Xtest.label, Labels(:,ind_test)];
+        Xcv.data = [Xcv.data, data(:, ind_test)];
+        Xcv.label = [Xcv.label, Labels(:,ind_test)];
         
         X.data = [X.data, data(:, ind_train)];
         X.label = [X.label, Labels(:,ind_train)];                
       
-        Xcv.data = [Xcv.data, data(:, ind_cv)];
-        Xcv.label = [Xcv.label, Labels(:,ind_cv)];        
+        Xtest.data = [Xtest.data, data(:, ind_cv)];
+        Xtest.label = [Xtest.label, Labels(:,ind_cv)];        
     end 
     T = 0; 
         
 elseif optdata.ind_dataset == 3 % This dataset contains outlier itself no outliter adding is needed.
-    allx = zeros(165*120, 50*26);
+    data = zeros(165*120, 100*26);
     for i = 1:50
         for ii = 1:26
             part1 = ['M-00',num2str(i)];
@@ -110,33 +109,62 @@ elseif optdata.ind_dataset == 3 % This dataset contains outlier itself no outlit
                 part2 = ['-',num2str(ii),'.bmp'];
             end
             a = mean(imread([part1, part2]),3);
-            allx(:,(i-1)*26+ii) = a(:);    
+            data(:,(i-1)*26+ii) = a(:);    
         end
     end
-    Labels = [sum(kron(eye(50), 1:26)); 1:(50*26)];
-    indx = sum(kron(eye(50), [1:7, 14:20])+kron(diag(0:49), ones(1,14)*26));
-    ind_te = sum(kron(eye(50), [8:13])+kron(diag(0:49), ones(1,6)*26));
-    ind_cv = sum(kron(eye(50), [21:26])+kron(diag(0:49), ones(1,6)*26));
-    X.data = allx(:, indx);
-    X.label = Labels(:, indx);
-    Xcv.data = allx(:, ind_cv);
-    Xcv.label = Labels(:,ind_cv);
-    Xtest.data = allx(:, ind_te);
-    Xtest.label = Labels(:, ind_te);
-    T = 0;
+    % FEMALE
+    for i = 1:50
+        for ii = 1:26
+            part1 = ['W-00',num2str(i)];
+            if i > 9 
+                part1 = ['W-0',num2str(i)]; 
+            end                
+            part2 = ['-0',num2str(ii),'.bmp'];
+            if ii > 9 
+                part2 = ['-',num2str(ii),'.bmp'];
+            end
+            a = mean(imread([part1, part2]),3);
+            data(:,(50+i-1)*26+ii) = a(:);    
+        end
+    end
+    % data partition
+    Xcv.data = [];
+    Xcv.label = [];
+    X.data = [];
+    X.label = [];
+    Xtest.data = [];
+    Xtest.label = [];   
+    label = sum(kron(eye(100), 1:26));
+    Labels = [label; 1:(100*26)];
+    ncv = 0;  % 11 samples per class -testing
+    ntrain = 16; % 50 samples per class -training 
+
+    rng(optdata.rng)
+    ind = randperm(26); % 
+    ind_cv = sum(kron(eye(100), ind(1:ncv)) + kron(diag(0:99), 26*ones(1, ncv)));
+    ind_train = sum(kron(eye(100), ind(ncv+1: ncv+ntrain)) + kron(diag(0:99), 26*ones(1, ntrain))); 
+    ind_test = sum(kron(eye(100), ind(ncv+ntrain+1: end)) + kron(diag(0:99), 26*ones(1, length(ind(ncv+ntrain+1: end)))));
+        
+    Xcv.data = [Xcv.data, data(:, ind_cv)];
+    Xcv.label = [Xcv.label, Labels(:,ind_cv)];
+
+    X.data = [X.data, data(:, ind_train)];
+    X.label = [X.label, Labels(:,ind_train)];                
+
+    Xtest.data = [Xtest.data, data(:, ind_test)];
+    Xtest.label = [Xtest.label, Labels(:,ind_test)];        
+    T = 0; 
 else
     fprintf('\nno dataset found\n \n')
 end
 
-try 
+if optdata.gpu
     X.data = gpu(X.data);
     X.label = gpu(X.label); 
-    Xcv.data = gpu(Xcv.data);
-    Xcv.label = gpu(Xcv.label); 
     Xtest.data = gpu(Xtest.data);
     Xtest.label = gpu(Xtest.label); 
-    fprintf('GPU is used \n')
-catch
-    fprintf('GPU is not available, calculating on cpu \n')
+    Xcv.data = gpu(Xcv.data);
+    Xcv.label = gpu(Xcv.label); 
+end
     
 end %end of the file
