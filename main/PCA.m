@@ -42,8 +42,8 @@ P = trainmypca(X, dim);
 % KNN classifier
 acc = acc + fitpca(P, Xcv, optdata); % k = 5
 end
-acc_all(o_per, d) = acc/cv_fold;
-disp('dataset'); disp(s); disp(acc_all)
+acc_all(o_per, d) = acc/cv_fold
+disp('dataset'); disp(s); 
 acc = 0;
 end
 end

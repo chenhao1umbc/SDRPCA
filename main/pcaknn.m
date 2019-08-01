@@ -39,14 +39,14 @@ optdata.rng = i; % random seed
 dim = d_set(d);
 x = X.data;
 x0 = x-mean(x,2);
-[u,s,v] = svd(x0*x0');
+[u,~,v] = svd(x0*x0');
 Prj = u(:, 1:dim)'; 
 Xtr = Prj*X.data;
 % KNN classifier
 acc = acc + myknn(Xtr, X.label(1,:), Xtest, Prj); % k = 5
 end
-acc_all(o_per, d) = acc/cv_fold;
-disp('dataset'); disp(s); disp(acc_all)
+acc_all(o_per, d) = acc/cv_fold
+disp('dataset'); disp(s); 
 acc = 0;
 end
 end
