@@ -7,11 +7,12 @@ addpath(genpath('../../data_img'))
 
 % init data & and settings
 try
-gpu(1)
-optdata.gpu = 1;
-fprintf('GPU is used \n')
+    gpu(1);
+    optdata.gpu = 1;
+    fprintf('GPU is used \n')
 catch 
-fprintf('GPU is not available, calculating on cpu \n')
+    optdata.gpu = 0;
+    fprintf('GPU is not available, calculating on cpu \n')
 end
 optdata.ind_dataset = 1;% 1 is Extended Yale B, 0 is toy data
 optdata.add_outlier = true; % adding outlier or not
