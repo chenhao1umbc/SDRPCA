@@ -27,6 +27,8 @@ acc = 0;
 
 %%
 tic
+for s = 1:3
+    optdata.ind_dataset = s;% 1 is Extended Yale B, 0 is toy data
 for o_per = 1:length(o_per_set)
 for d = 1:length(d_set)
 for i = 1:cv_fold
@@ -40,8 +42,10 @@ P = trainmypca(X, dim);
 % KNN classifier
 acc = acc + fitpca(P, Xcv, optdata); % k = 5
 end
-acc_all(o_per, d) = acc/cv_fold
+acc_all(o_per, d) = acc/cv_fold;
+disp('dataset'); disp(s); disp(acc_all)
 acc = 0;
+end
 end
 end
 
