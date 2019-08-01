@@ -23,7 +23,7 @@ if nargin <1 || optdata.ind_dataset == 0
 elseif optdata.ind_dataset == 1    
     load('ExtendedYaleB_front_32x32.mat');     
     ntest = 13;  % 13 samples per class -testing
-    ntrain = 40; % 40 samples per class -training
+    ntrain = 30; % 40 samples per class -training
 
     % adding outlider is moved outside this function
     
