@@ -97,7 +97,7 @@ elseif optdata.ind_dataset == 2
     T = 0; 
         
 elseif optdata.ind_dataset == 3 % This dataset contains outlier itself no outliter adding is needed.
-    data = zeros(165*120, 100*26);
+    data = zeros(165*120/9, 100*26); % downsample 3*3
     for i = 1:50
         for ii = 1:26
             part1 = ['M-00',num2str(i)];
@@ -109,6 +109,7 @@ elseif optdata.ind_dataset == 3 % This dataset contains outlier itself no outlit
                 part2 = ['-',num2str(ii),'.bmp'];
             end
             a = mean(imread([part1, part2]),3);
+            a = imresize(a, [165/3, 120/3]);
             data(:,(i-1)*26+ii) = a(:);    
         end
     end
@@ -124,6 +125,7 @@ elseif optdata.ind_dataset == 3 % This dataset contains outlier itself no outlit
                 part2 = ['-',num2str(ii),'.bmp'];
             end
             a = mean(imread([part1, part2]),3);
+            a = imresize(a, [165/3, 120/3]);
             data(:,(50+i-1)*26+ii) = a(:);    
         end
     end
