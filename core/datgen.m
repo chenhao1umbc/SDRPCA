@@ -136,7 +136,7 @@ elseif optdata.ind_dataset == 3 % This dataset contains outlier itself no outlit
     X.label = [];
     Xtest.data = [];
     Xtest.label = [];   
-    label = sum(kron(eye(100), 1:26));
+    label = sum(kron(diag(1:100), ones(1,26)));
     Labels = [label; 1:(100*26)];
     ncv = 0;  % 11 samples per class -testing
     ntrain = 16; % 50 samples per class -training 
