@@ -18,7 +18,7 @@ if nargin < 6 || isempty(display)
     display = false;
 end
 if nargin<5 || isempty(alm_type)
-    alm_type = 0 ;
+    alm_type = 1 ;
 end
 
 if nargin<4 || isempty(reg)
