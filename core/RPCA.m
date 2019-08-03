@@ -31,13 +31,16 @@ function [L, S] = RPCA(X, lambda, mu, tol, max_iter)
     if nargin < 5
         max_iter = 1000;
     end
-
+    
     % initial solution
     global optdata
+    mu = 10*lambda;
+    max_mu = 1e4*lambda;
+    rho = 1.01; if optdata.gpu ==1; rho = gpu(rho); end 
     L = zeros(M, N);  if optdata.gpu ==1; L = gpu(L); end
     S = zeros(M, N);  if optdata.gpu ==1; S = gpu(S); end
     Y = zeros(M, N); if optdata.gpu ==1; Y = gpu(Y); end
-    diff = zeros(max_iter);
+    diff = zeros(max_iter); if optdata.gpu ==1; diff = gpu(diff); end
     for iter = (1:max_iter)
         % ADMM step: update L and S
         L = Do(1/mu, X - S + (1/mu)*Y);%更新低秩矩阵
@@ -55,8 +58,8 @@ function [L, S] = RPCA(X, lambda, mu, tol, max_iter)
         end
         if iter>10 &&   (abs(diff(iter) - diff(iter-10))/abs(diff(iter)) <1e-3)
             break;
-        end
-
+        end        
+        mu = min(max_mu,mu*rho);
         if (err < tol) break; end
     end
 end

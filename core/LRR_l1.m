@@ -33,7 +33,7 @@ iter = 0;
 if display
     disp(['initial,rank=' num2str(rank(Z))]);
 end
-diff = zeros(1, maxIter);
+diff = zeros(1, maxIter);if optdata.gpu ==1; diff = gpu(diff); end
 while iter<maxIter
     iter = iter + 1;
     %update J
