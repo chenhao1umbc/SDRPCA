@@ -51,7 +51,7 @@ function [L, S] = RPCA(X, lambda, mu, tol, max_iter)
 %         if (iter == 1) || (mod(iter, 10) == 0) || (err < tol)
 %             fprintf(1, 'iter: %04d\terr: %f\trank(L): %d\tcard(S): %d\n', ...
 %                     iter, err, rank(L), nnz(S(~unobserved)));
-        end
+%         end
         if (err < tol) break; end
     end
 end
