@@ -11,29 +11,20 @@ For product information, visit www.mathworks.com.
 >> >> >> >> >> >> >> >> >> >> GPU is used 
 >> >> >> >> >> >> >> >> >> >> >> >> >> >> initial,rank=0
 iter 1,mu=8.0e-01,rank=700,stopALM=3.515e-01
-iter 10,mu=1.9e+00,rank=673,stopALM=7.020e-02
-iter 20,mu=4.9e+00,rank=665,stopALM=4.053e-02
 iter 30,mu=1.3e+01,rank=666,stopALM=2.702e-02
-iter 40,mu=3.3e+01,rank=671,stopALM=1.529e-02
-iter 50,mu=8.5e+01,rank=691,stopALM=7.509e-03
 iter 60,mu=2.2e+02,rank=781,stopALM=3.247e-03
-iter 70,mu=5.7e+02,rank=853,stopALM=1.634e-03
-iter 80,mu=1.5e+03,rank=896,stopALM=8.617e-04
 iter 90,mu=3.9e+03,rank=914,stopALM=4.433e-04
-iter 100,mu=1.0e+04,rank=921,stopALM=2.189e-04
-iter 110,mu=2.6e+04,rank=924,stopALM=9.528e-05
 iter 120,mu=6.7e+04,rank=926,stopALM=4.239e-05
-iter 130,mu=1.7e+05,rank=927,stopALM=1.742e-05
-iter 140,mu=4.5e+05,rank=927,stopALM=7.413e-06
 iter 146,mu=8.0e+05,rank=928,stopALM=4.552e-06
 initial,rank=0
 iter 1,mu=8.0e-01,rank=698,stopALM=3.460e-01
-iter 10,mu=1.9e+00,rank=674,stopALM=6.630e-02
-iter 20,mu=4.9e+00,rank=665,stopALM=3.786e-02
 iter 30,mu=1.3e+01,rank=666,stopALM=2.662e-02
-iter 40,mu=3.3e+01,rank=670,stopALM=1.387e-02
-iter 50,mu=8.5e+01,rank=691,stopALM=7.116e-03
 iter 60,mu=2.2e+02,rank=780,stopALM=3.341e-03
-iter 70,mu=5.7e+02,rank=854,stopALM=1.667e-03
-iter 80,mu=1.5e+03,rank=897,stopALM=8.805e-04
 iter 90,mu=3.9e+03,rank=914,stopALM=4.707e-04
+iter 120,mu=6.7e+04,rank=927,stopALM=4.374e-05
+iter 145,mu=7.3e+05,rank=929,stopALM=4.653e-06
+initial,rank=0
+iter 1,mu=8.0e-01,rank=686,stopALM=3.414e-01
+iter 30,mu=1.3e+01,rank=652,stopALM=2.406e-02
+>> Elapsed time is 319.392793 seconds.
+>> >> >> 
