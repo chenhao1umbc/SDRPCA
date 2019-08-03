@@ -2,8 +2,6 @@ function [Ptilde] = updatePtilde(Var, opt)
 % Var is initialed variables
 %opt is options
 
-offset = 0;
-
 if opt.lam  == 0
     Ptilde = Var.Ptilde;
 else
@@ -11,16 +9,14 @@ else
     A = opt.lam*P*opt.prec.A*P';
     B = (A+A')/2;
     [V, D] = eig(B);
-    [v, index] = sort(diag(D),'descend');    
-    if isfield(opt, 'rank_Ptilde')
-        ind = index(find(v>1e-6));
-        Ptilde = V(:,index(ind(end - offset- round(opt.rank_Ptilde)+1 :...
-            end -offset)));
-    else
-        ind = index(find(v>1e-6));
-%         Ptilde = V(:, index(ind(ceil(0.1*end):end)));
-        Ptilde = V(:, ind);
-    end
+    [v, index] = sort(diag(D),'descend'); 
+    
+    threshold = 1e4;
+    min_s = v(1)/threshold;
+    P_len = length(v(v> min_s)); % trim small eigen values    
+    P_kept_len = floor(opt.percentage*P_len);
+    ind_trim = index(P_len:-1:P_kept_len);
+    Ptilde = V(:, ind_trim);
 end
 
 end % end of the file

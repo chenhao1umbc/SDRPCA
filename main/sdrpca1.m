@@ -22,7 +22,7 @@ optdata.rng = 0; % random seed
 [X,Xcv,Xtest,E] = out_norm(X0, X0cv, X0test, optdata);
 cv_fold = 5; % 3 folds cross-validation
 [Var0, opt] = initdata(X, optdata);
-
+opt.percentage
 for ii = 1:6
 optdata.o_per = 0.1*(ii -1);% outlier percentage
 optdata.outlier_type = 'l1'; % l1 is l1 norm, l21 is l21 norm, no other options
@@ -35,13 +35,8 @@ optdata.rng = 0; % random seed
 nu = [1e-3, 1e-2, 1e-4, 0.1, 1, 1e-6, 1e-5];% for error
 lam = [1e-6, 1e-5, 1e-4, 1e-3, 1e-2, 1e-1];% for fisher
 av_acc = zeros(length(nu), length(lam)); % >0.9408
-<<<<<<< HEAD:main/f1.m
 opt.calcost = true*0;
 cv_fold = 5;
-=======
-opt.calcost = true;
-cv_fold =1; 
->>>>>>> E=255:main/sdrpca1.m
 
 for ind1 = 1:length(nu)    
 for ind2 = 1:length(lam)
