@@ -42,7 +42,7 @@ optdata.rng = i; % random seed
 Xcv = Xtest;
 
 lambda = lamb_set(l); % try 0.05 0.1 0.5
-[Z, E_hat] = solve_lrr(X.data,X.data,lambda,1,1);
+[Z, E_hat] = LRR_l1(X.data,X.data,lambda);
 Proj = get_proj(X.data*Z);
 Xtr = Proj*X.data;
 % KNN classifier

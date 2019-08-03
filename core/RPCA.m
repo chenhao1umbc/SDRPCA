@@ -37,7 +37,7 @@ function [L, S] = RPCA(X, lambda, mu, tol, max_iter)
     L = zeros(M, N);  if optdata.gpu ==1; L = gpu(L); end
     S = zeros(M, N);  if optdata.gpu ==1; S = gpu(S); end
     Y = zeros(M, N); if optdata.gpu ==1; Y = gpu(Y); end
-
+    diff = zeros(max_iter);
     for iter = (1:max_iter)
         % ADMM step: update L and S
         L = Do(1/mu, X - S + (1/mu)*Y);%更新低秩矩阵
@@ -48,9 +48,13 @@ function [L, S] = RPCA(X, lambda, mu, tol, max_iter)
         Y = Y + mu*Z;
 
         err = norm(Z, 'fro') / normX;
-%         if (iter == 1) || (mod(iter, 10) == 0) || (err < tol)
-%             fprintf(1, 'iter: %04d\terr: %f\trank(L): %d\tcard(S): %d\n', ...
-%                     iter, err, rank(L), nnz(S(~unobserved)));
+        diff(iter) = err;
+        if (iter == 1) || (mod(iter, 10) == 0) || (err < tol)
+            fprintf(1, 'iter: %04d\terr: %f\trank(L): %d\tcard(S): %d\n', ...
+                    iter, err, rank(L), nnz(S(~unobserved)));
+        end
+        if iter>10 &&   (abs(diff(iter) - diff(iter-10))/abs(diff(iter)) <1e-3)
+            break;
         end
         if (err < tol) break; end
     end
