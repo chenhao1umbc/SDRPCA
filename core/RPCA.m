@@ -56,6 +56,7 @@ function [L, S] = RPCA(X, lambda, mu, tol, max_iter)
         if iter>10 &&   (abs(diff(iter) - diff(iter-10))/abs(diff(iter)) <1e-3)
             break;
         end
+
         if (err < tol) break; end
     end
 end

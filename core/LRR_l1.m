@@ -61,7 +61,7 @@ while iter<maxIter
     leq2 = Z-J;
     stopC = max(max(max(abs(leq1))),max(max(abs(leq2))));
     diff(iter) = stopC;
-    if display && (iter==1 || mod(iter,25)==0 || stopC<tol)
+    if display && (iter==1 || mod(iter,10)==0 || stopC<tol)
         disp(['iter ' num2str(iter) ',mu=' num2str(mu,'%2.1e') ...
             ',rank=' num2str(rank(Z,1e-3*norm(Z,2))) ',stopALM=' num2str(stopC,'%2.3e')]);
     end
