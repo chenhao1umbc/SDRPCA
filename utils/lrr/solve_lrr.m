@@ -15,7 +15,7 @@ function [Z,E] = solve_lrr(X,A,lambda,reg,alm_type,display)
 %                 -- 1             use the inexact ALM strategy
 %               
 if nargin < 6 || isempty(display)
-    display = false;
+    display = 0;
 end
 if nargin<5 || isempty(alm_type)
     alm_type = 1 ;

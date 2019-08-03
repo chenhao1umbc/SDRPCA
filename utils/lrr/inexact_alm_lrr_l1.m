@@ -11,20 +11,20 @@ if nargin<4
     display = false;
 end
 
-tol = 1e-8;
-maxIter = 1e6;
+tol = 5e-6;
+maxIter = 1e3;
 [d n] = size(X);
 m = size(A,2);
 rho = 1.1;
-max_mu = 1e10;
-mu = 1e-6;
+max_mu = 1e8;
+mu = 0.1*lambda;  
 atx = A'*X;
 inv_a = inv(A'*A+eye(m));
 %% Initializing optimization variables
 % intialize
 J = zeros(m,n); if optdata.gpu ==1; J = gpu(J); end
 Z = zeros(m,n); if optdata.gpu ==1; Z = gpu(Z); end
-E = sparse(d,n);if optdata.gpu ==1; E = gpu(E); end
+E = zeros(d,n);if optdata.gpu ==1; E = gpu(E); end
 
 Y1 = zeros(d,n); if optdata.gpu ==1; Y1 = gpu(Y1); end
 Y2 = zeros(m,n); if optdata.gpu ==1; Y2 = gpu(Y2); end
@@ -59,7 +59,7 @@ while iter<maxIter
     leq1 = xmaz-E;
     leq2 = Z-J;
     stopC = max(max(max(abs(leq1))),max(max(abs(leq2))));
-    if display && (iter==1 || mod(iter,50)==0 || stopC<tol)
+    if display && (iter==1 || mod(iter,25)==0 || stopC<tol)
         disp(['iter ' num2str(iter) ',mu=' num2str(mu,'%2.1e') ...
             ',rank=' num2str(rank(Z,1e-3*norm(Z,2))) ',stopALM=' num2str(stopC,'%2.3e')]);
     end
