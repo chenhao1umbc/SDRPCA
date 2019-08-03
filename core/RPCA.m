@@ -1,4 +1,3 @@
-
 function [L, S] = RPCA(X, lambda, mu, tol, max_iter)
 
     % - X is a data matrix (of the size N x M) to be decomposed
@@ -52,7 +51,7 @@ function [L, S] = RPCA(X, lambda, mu, tol, max_iter)
 
         err = norm(Z, 'fro') / normX;
         diff(iter) = err;
-        if (iter == 1) || (mod(iter, 10) == 0) || (err < tol)
+        if (iter == 1) || (mod(iter, 30) == 0) || (err < tol)
             fprintf(1, 'iter: %04d\terr: %f\trank(L): %d\tcard(S): %d\n', ...
                     iter, err, rank(L), nnz(S(~unobserved)));
         end

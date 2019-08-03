@@ -9,5 +9,62 @@ To get started, type one of these: helpwin, helpdesk, or demo.
 For product information, visit www.mathworks.com.
  
 >> >> >> >> >> >> >> >> >> >> GPU is used 
->> >> >> >> >> >> >> >> >> >> >> >> >> >> >> Elapsed time is 0.853340 seconds.
->> >> >> >> 
+>> >> >> >> >> >> >> >> >> >> >> >> >> >> iter: 0001	err: 0.720698	rank(L): 1	card(S): 3330
+iter: 0010	err: 0.107873	rank(L): 6	card(S): 312470
+iter: 0020	err: 0.047228	rank(L): 10	card(S): 534758
+iter: 0030	err: 0.027328	rank(L): 11	card(S): 658419
+iter: 0040	err: 0.018178	rank(L): 12	card(S): 738741
+iter: 0050	err: 0.013036	rank(L): 13	card(S): 796882
+iter: 0060	err: 0.009830	rank(L): 14	card(S): 841881
+iter: 0070	err: 0.007665	rank(L): 14	card(S): 878888
+iter: 0080	err: 0.006088	rank(L): 14	card(S): 910520
+iter: 0090	err: 0.004922	rank(L): 14	card(S): 937428
+iter: 0100	err: 0.004015	rank(L): 14	card(S): 961436
+iter: 0110	err: 0.003297	rank(L): 14	card(S): 982565
+iter: 0120	err: 0.002722	rank(L): 14	card(S): 1001298
+iter: 0130	err: 0.002256	rank(L): 14	card(S): 1017934
+iter: 0140	err: 0.001873	rank(L): 15	card(S): 1032655
+iter: 0150	err: 0.001564	rank(L): 15	card(S): 1045519
+iter: 0160	err: 0.001312	rank(L): 15	card(S): 1056986
+iter: 0170	err: 0.001101	rank(L): 16	card(S): 1067194
+iter: 0180	err: 0.000924	rank(L): 16	card(S): 1076317
+iter: 0190	err: 0.000778	rank(L): 16	card(S): 1084401
+iter: 0200	err: 0.000657	rank(L): 16	card(S): 1091472
+iter: 0210	err: 0.000557	rank(L): 16	card(S): 1097747
+iter: 0220	err: 0.000470	rank(L): 16	card(S): 1103555
+iter: 0230	err: 0.000398	rank(L): 16	card(S): 1108572
+iter: 0240	err: 0.000339	rank(L): 16	card(S): 1113010
+iter: 0250	err: 0.000289	rank(L): 16	card(S): 1117028
+iter: 0260	err: 0.000246	rank(L): 16	card(S): 1120707
+iter: 0270	err: 0.000210	rank(L): 16	card(S): 1123839
+iter: 0280	err: 0.000179	rank(L): 16	card(S): 1126818
+iter: 0290	err: 0.000153	rank(L): 16	card(S): 1129402
+iter: 0300	err: 0.000130	rank(L): 16	card(S): 1131763
+iter: 0310	err: 0.000111	rank(L): 16	card(S): 1133834
+iter: 0320	err: 0.000095	rank(L): 16	card(S): 1135681
+iter: 0330	err: 0.000081	rank(L): 16	card(S): 1137376
+iter: 0340	err: 0.000070	rank(L): 16	card(S): 1138851
+iter: 0350	err: 0.000060	rank(L): 16	card(S): 1140219
+iter: 0360	err: 0.000051	rank(L): 16	card(S): 1141509
+iter: 0370	err: 0.000044	rank(L): 16	card(S): 1142557
+iter: 0380	err: 0.000037	rank(L): 16	card(S): 1143626
+iter: 0390	err: 0.000032	rank(L): 16	card(S): 1144511
+iter: 0400	err: 0.000027	rank(L): 16	card(S): 1145344
+iter: 0410	err: 0.000023	rank(L): 16	card(S): 1146057
+iter: 0420	err: 0.000020	rank(L): 16	card(S): 1146707
+iter: 0430	err: 0.000017	rank(L): 16	card(S): 1147341
+iter: 0440	err: 0.000014	rank(L): 16	card(S): 1147865
+iter: 0450	err: 0.000012	rank(L): 16	card(S): 1148332
+iter: 0460	err: 0.000010	rank(L): 16	card(S): 1148787
+iter: 0470	err: 0.000009	rank(L): 16	card(S): 1149175
+iter: 0480	err: 0.000008	rank(L): 16	card(S): 1149504
+iter: 0490	err: 0.000006	rank(L): 16	card(S): 1149808
+iter: 0500	err: 0.000006	rank(L): 16	card(S): 1150069
+iter: 0507	err: 0.000005	rank(L): 16	card(S): 1150231
+iter: 0001	err: 0.729114	rank(L): 1	card(S): 3733
+iter: 0010	err: 0.105770	rank(L): 6	card(S): 305895
+iter: 0020	err: 0.046330	rank(L): 9	card(S): 516094
+iter: 0030	err: 0.026976	rank(L): 11	card(S): 634246
+iter: 0040	err: 0.018151	rank(L): 12	card(S): 711827
+iter: 0050	err: 0.013205	rank(L): 12	card(S): 768849
+iter: 0060	err: 0.010013	rank(L): 13	card(S): 813835
