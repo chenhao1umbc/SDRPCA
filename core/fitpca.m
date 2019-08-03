@@ -1,4 +1,3 @@
-
 function acc = fitpca(P, Xcv, optdata)
 
     prelabel = mypcapredict(P, Xcv, optdata);

@@ -6,7 +6,7 @@ function [Z,E] = inexact_alm_lrr_l1(X,A,lambda,display)
 %        X -- D*N data matrix, D is the data dimension, and N is the number
 %             of data vectors.
 %        A -- D*M matrix of a dictionary, M is the size of the dictionary
-
+global optdata
 if nargin<4
     display = false;
 end
@@ -22,12 +22,12 @@ atx = A'*X;
 inv_a = inv(A'*A+eye(m));
 %% Initializing optimization variables
 % intialize
-J = zeros(m,n);
-Z = zeros(m,n);
-E = sparse(d,n);
+J = zeros(m,n); if optdata.gpu ==1; J = gpu(J); end
+Z = zeros(m,n); if optdata.gpu ==1; Z = gpu(Z); end
+E = sparse(d,n);if optdata.gpu ==1; E = gpu(E); end
 
-Y1 = zeros(d,n);
-Y2 = zeros(m,n);
+Y1 = zeros(d,n); if optdata.gpu ==1; Y1 = gpu(Y1); end
+Y2 = zeros(m,n); if optdata.gpu ==1; Y2 = gpu(Y2); end
 %% Start main loop
 iter = 0;
 if display

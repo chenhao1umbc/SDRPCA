@@ -6,8 +6,9 @@ addpath(genpath('../../SDRPCA'))
 addpath(genpath('../../data_img'))
 
 % init data & and settings
+global optdata % to cooperate with existing code for GPU 
 try
-    gpuDevice(2);
+    gpuDevice(1);
     optdata.gpu = 1;
     fprintf('GPU is used \n')
 catch 
@@ -21,10 +22,38 @@ optdata.rng = 0;
 [X0,X0cv,X0test,T] = datgen(optdata); 
 M = size(X0.data,1); % data dimension
 cv_fold = 5; % 3 folds cross-validation
-d_set = floor(2/3*M/20): floor(2/3*M/20): floor(2/3*M);
+lamb_set = 2.^(-(-3:16));
 o_per_set = 0:0.1:0.5;
 acc = 0;
 
+%%
+tic
+for s = 1:3
+    optdata.ind_dataset = s;% 1 is Extended Yale B, 0 is toy data
+    acc_all = zeros(length(o_per_set), length(lamb_set));
+    if optdata.gpu,  acc_all = gpu(zeros(length(o_per_set), length(lamb_set))); end
+for o_per = 1:length(o_per_set)
+for l = 1:length(lamb_set)
+for i = 1:cv_fold
+optdata.o_per = o_per_set(o_per);% outlier percentage
+optdata.rng = i; % random seed
+[X0,X0cv,X0test,T] = datgen(optdata); 
+[X,Xcv,Xtest,E] = out_norm(X0, X0cv, X0test, optdata);
+Xcv = Xtest;
 
-lambda = 1/sqrt(n); % try 0.05 0.1 0.5
-[Z,E] = solve_lrr(X,X,lambda,1,1);
+lambda = lamb_set(l); % try 0.05 0.1 0.5
+[Z, E_hat] = solve_lrr(X.data,X.data,lambda,1,1);
+Proj = get_proj(X.data*Z);
+Xtr = Proj*X.data;
+% KNN classifier
+acc = acc + myknn(Xtr, X.label(1,:), Xtest, Proj); % k = 5
+end
+acc_all(o_per, l) = acc/cv_fold
+disp('dataset'); disp(s); 
+acc = 0;
+end
+end
+end
+toc
+
+
