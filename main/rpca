@@ -9,619 +9,380 @@ To get started, type one of these: helpwin, helpdesk, or demo.
 For product information, visit www.mathworks.com.
  
 >> >> >> >> >> >> >> >> >> >> GPU is used 
->> >> >> >> >> >> >> >> >> >> >> >> >> >> iter: 0001	err: 0.011324	rank(L): 853	card(S): 0
-iter: 0007	err: 0.000002	rank(L): 1022	card(S): 0
-iter: 0001	err: 0.011333	rank(L): 855	card(S): 0
-iter: 0007	err: 0.000002	rank(L): 1022	card(S): 0
-iter: 0001	err: 0.011288	rank(L): 845	card(S): 0
-iter: 0007	err: 0.000002	rank(L): 1022	card(S): 0
-iter: 0001	err: 0.011436	rank(L): 884	card(S): 0
-iter: 0006	err: 0.000002	rank(L): 1024	card(S): 0
-iter: 0001	err: 0.011410	rank(L): 872	card(S): 0
-iter: 0006	err: 0.000002	rank(L): 1024	card(S): 0
+>> >> >> >> >> >> >> >> >> >> >> >> >> >> iter: 0001	err: 0.011847	rank(L): 1024	card(S): 0
+iter: 0002	err: 0.000000	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.011847	rank(L): 1024	card(S): 0
+iter: 0002	err: 0.000000	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.011847	rank(L): 1024	card(S): 0
+iter: 0002	err: 0.000000	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.011847	rank(L): 1024	card(S): 0
+iter: 0002	err: 0.000000	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.011847	rank(L): 1024	card(S): 0
+iter: 0002	err: 0.000000	rank(L): 1024	card(S): 0
 
 acc_all =
 
-  6x20 single gpuArray matrix
-
   Columns 1 through 7
 
-    0.8480         0         0         0         0         0         0
          0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-
-  Columns 8 through 14
-
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
+    0.1603         0         0         0         0         0         0
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
 
-  Columns 15 through 20
+  Columns 8 through 11
 
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
 
 dataset
      1
 
-iter: 0001	err: 0.021427	rank(L): 733	card(S): 0
-iter: 0013	err: 0.000002	rank(L): 1022	card(S): 0
-iter: 0001	err: 0.021439	rank(L): 735	card(S): 0
-iter: 0013	err: 0.000002	rank(L): 1022	card(S): 0
-iter: 0001	err: 0.021310	rank(L): 722	card(S): 0
-iter: 0013	err: 0.000002	rank(L): 1022	card(S): 0
-iter: 0001	err: 0.021800	rank(L): 769	card(S): 0
-iter: 0011	err: 0.000002	rank(L): 1024	card(S): 0
-iter: 0001	err: 0.021653	rank(L): 752	card(S): 0
-iter: 0011	err: 0.000002	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.023678	rank(L): 1018	card(S): 0
+iter: 0003	err: 0.000000	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.023677	rank(L): 1019	card(S): 0
+iter: 0003	err: 0.000000	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.023675	rank(L): 1017	card(S): 0
+iter: 0003	err: 0.000000	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.023685	rank(L): 1019	card(S): 0
+iter: 0003	err: 0.000000	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.023681	rank(L): 1018	card(S): 0
+iter: 0003	err: 0.000000	rank(L): 1024	card(S): 0
 
 acc_all =
 
-  6x20 single gpuArray matrix
-
   Columns 1 through 7
 
-    0.8480    0.8482         0         0         0         0         0
          0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-
-  Columns 8 through 14
-
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
+    0.1603    0.1603         0         0         0         0         0
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
 
-  Columns 15 through 20
+  Columns 8 through 11
 
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
 
 dataset
      1
 
-iter: 0001	err: 0.039166	rank(L): 576	card(S): 0
-iter: 0023	err: 0.000002	rank(L): 1022	card(S): 0
-iter: 0001	err: 0.039176	rank(L): 578	card(S): 0
-iter: 0024	err: 0.000002	rank(L): 1022	card(S): 0
-iter: 0001	err: 0.038827	rank(L): 564	card(S): 0
-iter: 0024	err: 0.000002	rank(L): 1022	card(S): 0
-iter: 0001	err: 0.040206	rank(L): 621	card(S): 0
-iter: 0020	err: 0.000002	rank(L): 1024	card(S): 0
-iter: 0001	err: 0.039642	rank(L): 592	card(S): 0
-iter: 0020	err: 0.000002	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.046878	rank(L): 976	card(S): 0
+iter: 0004	err: 0.000000	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.046888	rank(L): 977	card(S): 0
+iter: 0004	err: 0.000000	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.046827	rank(L): 972	card(S): 0
+iter: 0004	err: 0.000000	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.046933	rank(L): 980	card(S): 0
+iter: 0004	err: 0.000000	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.046898	rank(L): 977	card(S): 0
+iter: 0004	err: 0.000000	rank(L): 1024	card(S): 0
 
 acc_all =
 
-  6x20 single gpuArray matrix
-
   Columns 1 through 7
 
-    0.8480    0.8482    0.8480         0         0         0         0
          0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-
-  Columns 8 through 14
-
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
+    0.1603    0.1603    0.1603         0         0         0         0
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
 
-  Columns 15 through 20
+  Columns 8 through 11
 
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
 
 dataset
      1
 
-iter: 0001	err: 0.068461	rank(L): 408	card(S): 0
-iter: 0030	err: 0.000239	rank(L): 1014	card(S): 0
-iter: 0040	err: 0.000004	rank(L): 1022	card(S): 0
-iter: 0001	err: 0.068554	rank(L): 409	card(S): 0
-iter: 0030	err: 0.000242	rank(L): 1013	card(S): 0
-iter: 0042	err: 0.000002	rank(L): 1022	card(S): 0
-iter: 0001	err: 0.067742	rank(L): 397	card(S): 0
-iter: 0030	err: 0.000256	rank(L): 1012	card(S): 0
-iter: 0042	err: 0.000002	rank(L): 1022	card(S): 0
-iter: 0001	err: 0.071031	rank(L): 445	card(S): 0
-iter: 0030	err: 0.000162	rank(L): 1019	card(S): 0
-iter: 0036	err: 0.000002	rank(L): 1024	card(S): 0
-iter: 0001	err: 0.069233	rank(L): 414	card(S): 0
-iter: 0030	err: 0.000178	rank(L): 1019	card(S): 0
-iter: 0035	err: 0.000002	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.090983	rank(L): 882	card(S): 0
+iter: 0007	err: 0.000000	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.091031	rank(L): 885	card(S): 0
+iter: 0007	err: 0.000000	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.090760	rank(L): 876	card(S): 0
+iter: 0007	err: 0.000000	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.091235	rank(L): 891	card(S): 0
+iter: 0006	err: 0.000000	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.091023	rank(L): 884	card(S): 0
+iter: 0006	err: 0.000000	rank(L): 1024	card(S): 0
 
 acc_all =
 
-  6x20 single gpuArray matrix
-
   Columns 1 through 7
 
-    0.8480    0.8482    0.8480    0.8482         0         0         0
          0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-
-  Columns 8 through 14
-
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
+    0.1603    0.1603    0.1603    0.1603         0         0         0
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
 
-  Columns 15 through 20
+  Columns 8 through 11
 
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
 
 dataset
      1
 
-iter: 0001	err: 0.113260	rank(L): 247	card(S): 4
-iter: 0030	err: 0.000904	rank(L): 971	card(S): 5
-iter: 0060	err: 0.000134	rank(L): 1020	card(S): 5
-iter: 0069	err: 0.000003	rank(L): 1022	card(S): 5
-iter: 0001	err: 0.113792	rank(L): 251	card(S): 7
-iter: 0030	err: 0.000888	rank(L): 972	card(S): 9
-iter: 0060	err: 0.000111	rank(L): 1020	card(S): 9
-iter: 0070	err: 0.000002	rank(L): 1022	card(S): 9
-iter: 0001	err: 0.112388	rank(L): 247	card(S): 4
-iter: 0030	err: 0.000920	rank(L): 967	card(S): 7
-iter: 0060	err: 0.000148	rank(L): 1018	card(S): 7
-iter: 0071	err: 0.000002	rank(L): 1022	card(S): 7
-iter: 0001	err: 0.118514	rank(L): 274	card(S): 2
-iter: 0030	err: 0.000811	rank(L): 984	card(S): 3
-iter: 0060	err: 0.000032	rank(L): 1023	card(S): 3
-iter: 0061	err: 0.000002	rank(L): 1024	card(S): 3
-iter: 0001	err: 0.113976	rank(L): 248	card(S): 6
-iter: 0030	err: 0.000828	rank(L): 982	card(S): 9
-iter: 0060	err: 0.000003	rank(L): 1024	card(S): 9
+iter: 0001	err: 0.169852	rank(L): 704	card(S): 0
+iter: 0012	err: 0.000000	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.170221	rank(L): 709	card(S): 0
+iter: 0013	err: 0.000000	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.169016	rank(L): 691	card(S): 0
+iter: 0012	err: 0.000000	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.171019	rank(L): 721	card(S): 0
+iter: 0011	err: 0.000000	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.169953	rank(L): 703	card(S): 0
+iter: 0011	err: 0.000000	rank(L): 1024	card(S): 0
 
 acc_all =
 
-  6x20 single gpuArray matrix
-
   Columns 1 through 7
 
-    0.8480    0.8482    0.8480    0.8482    0.8474         0         0
          0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-
-  Columns 8 through 14
-
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
+    0.1603    0.1603    0.1603    0.1603    0.1603         0         0
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
 
-  Columns 15 through 20
+  Columns 8 through 11
 
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
 
 dataset
      1
 
-iter: 0001	err: 0.174370	rank(L): 126	card(S): 46
-iter: 0030	err: 0.002505	rank(L): 891	card(S): 276
-iter: 0060	err: 0.000680	rank(L): 984	card(S): 282
-iter: 0090	err: 0.000193	rank(L): 1016	card(S): 283
-iter: 0113	err: 0.000003	rank(L): 1022	card(S): 284
-iter: 0001	err: 0.175354	rank(L): 128	card(S): 71
-iter: 0030	err: 0.002527	rank(L): 892	card(S): 338
-iter: 0060	err: 0.000691	rank(L): 985	card(S): 345
-iter: 0090	err: 0.000205	rank(L): 1016	card(S): 344
-iter: 0113	err: 0.000003	rank(L): 1022	card(S): 345
-iter: 0001	err: 0.173172	rank(L): 127	card(S): 71
-iter: 0030	err: 0.002579	rank(L): 882	card(S): 321
-iter: 0060	err: 0.000728	rank(L): 979	card(S): 328
-iter: 0090	err: 0.000224	rank(L): 1014	card(S): 329
-iter: 0114	err: 0.000003	rank(L): 1021	card(S): 330
-iter: 0001	err: 0.183086	rank(L): 139	card(S): 70
-iter: 0030	err: 0.002318	rank(L): 917	card(S): 353
-iter: 0060	err: 0.000583	rank(L): 997	card(S): 361
-iter: 0090	err: 0.000135	rank(L): 1021	card(S): 362
-iter: 0096	err: 0.000004	rank(L): 1024	card(S): 363
-iter: 0001	err: 0.174145	rank(L): 124	card(S): 38
-iter: 0030	err: 0.002392	rank(L): 910	card(S): 262
-iter: 0060	err: 0.000613	rank(L): 995	card(S): 261
-iter: 0090	err: 0.000147	rank(L): 1020	card(S): 260
-iter: 0097	err: 0.000003	rank(L): 1024	card(S): 260
+iter: 0001	err: 0.291687	rank(L): 413	card(S): 0
+iter: 0021	err: 0.000000	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.293592	rank(L): 424	card(S): 0
+iter: 0023	err: 0.000000	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.287866	rank(L): 392	card(S): 0
+iter: 0021	err: 0.000000	rank(L): 1024	card(S): 0
+iter: 0001	err: 0.297088	rank(L): 446	card(S): 0
+iter: 0019	err: 0.000002	rank(L): 1024	card(S): 1
+iter: 0001	err: 0.291839	rank(L): 413	card(S): 0
+iter: 0019	err: 0.000000	rank(L): 1024	card(S): 0
 
 acc_all =
 
-  6x20 single gpuArray matrix
-
   Columns 1 through 7
 
-    0.8480    0.8482    0.8480    0.8482    0.8474    0.8513         0
          0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-
-  Columns 8 through 14
-
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
+    0.1603    0.1603    0.1603    0.1603    0.1603    0.1601         0
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
 
-  Columns 15 through 20
+  Columns 8 through 11
 
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
 
 dataset
      1
 
-iter: 0001	err: 0.246547	rank(L): 50	card(S): 198
-iter: 0030	err: 0.006336	rank(L): 756	card(S): 5795
-iter: 0060	err: 0.002047	rank(L): 905	card(S): 6313
-iter: 0090	err: 0.000863	rank(L): 969	card(S): 6423
-iter: 0120	err: 0.000377	rank(L): 1002	card(S): 6482
-iter: 0150	err: 0.000122	rank(L): 1020	card(S): 6494
-iter: 0180	err: 0.000007	rank(L): 1021	card(S): 6503
-iter: 0194	err: 0.000005	rank(L): 1021	card(S): 6503
-iter: 0001	err: 0.247387	rank(L): 52	card(S): 292
-iter: 0030	err: 0.006351	rank(L): 755	card(S): 5920
-iter: 0060	err: 0.002017	rank(L): 907	card(S): 6443
-iter: 0090	err: 0.000848	rank(L): 971	card(S): 6556
-iter: 0120	err: 0.000361	rank(L): 1004	card(S): 6600
-iter: 0150	err: 0.000135	rank(L): 1019	card(S): 6614
-iter: 0180	err: 0.000007	rank(L): 1019	card(S): 6623
-iter: 0194	err: 0.000005	rank(L): 1019	card(S): 6624
-iter: 0001	err: 0.243956	rank(L): 51	card(S): 327
-iter: 0030	err: 0.006440	rank(L): 745	card(S): 5716
-iter: 0060	err: 0.002044	rank(L): 901	card(S): 6263
-iter: 0090	err: 0.000875	rank(L): 966	card(S): 6414
-iter: 0120	err: 0.000399	rank(L): 1000	card(S): 6457
-iter: 0150	err: 0.000134	rank(L): 1019	card(S): 6475
-iter: 0180	err: 0.000007	rank(L): 1020	card(S): 6487
-iter: 0195	err: 0.000005	rank(L): 1020	card(S): 6488
-iter: 0001	err: 0.258749	rank(L): 56	card(S): 301
-iter: 0030	err: 0.006084	rank(L): 791	card(S): 6709
-iter: 0060	err: 0.001866	rank(L): 928	card(S): 7165
-iter: 0090	err: 0.000780	rank(L): 982	card(S): 7263
-iter: 0120	err: 0.000320	rank(L): 1010	card(S): 7306
-iter: 0150	err: 0.000062	rank(L): 1023	card(S): 7319
-iter: 0180	err: 0.000006	rank(L): 1023	card(S): 7322
-iter: 0187	err: 0.000005	rank(L): 1023	card(S): 7322
-iter: 0001	err: 0.245434	rank(L): 49	card(S): 205
-iter: 0030	err: 0.006287	rank(L): 776	card(S): 5474
-iter: 0060	err: 0.001920	rank(L): 924	card(S): 5961
-iter: 0090	err: 0.000781	rank(L): 982	card(S): 6105
-iter: 0120	err: 0.000309	rank(L): 1011	card(S): 6154
-iter: 0150	err: 0.000092	rank(L): 1022	card(S): 6172
-iter: 0180	err: 0.000006	rank(L): 1023	card(S): 6174
-iter: 0185	err: 0.000005	rank(L): 1023	card(S): 6174
+iter: 0001	err: 0.419256	rank(L): 117	card(S): 1008
+iter: 0030	err: 0.001591	rank(L): 1016	card(S): 11753
+iter: 0060	err: 0.000031	rank(L): 1024	card(S): 11795
+iter: 0089	err: 0.000005	rank(L): 1024	card(S): 11795
+iter: 0001	err: 0.425212	rank(L): 125	card(S): 1090
+iter: 0030	err: 0.001484	rank(L): 1017	card(S): 11499
+iter: 0060	err: 0.000031	rank(L): 1024	card(S): 11550
+iter: 0089	err: 0.000005	rank(L): 1024	card(S): 11554
+iter: 0001	err: 0.407583	rank(L): 105	card(S): 905
+iter: 0030	err: 0.001811	rank(L): 1015	card(S): 11360
+iter: 0060	err: 0.000031	rank(L): 1024	card(S): 11417
+iter: 0089	err: 0.000005	rank(L): 1024	card(S): 11420
+iter: 0001	err: 0.438073	rank(L): 134	card(S): 724
+iter: 0030	err: 0.001434	rank(L): 1018	card(S): 11100
+iter: 0060	err: 0.000028	rank(L): 1024	card(S): 11144
+iter: 0087	err: 0.000005	rank(L): 1024	card(S): 11147
+iter: 0001	err: 0.417447	rank(L): 108	card(S): 781
+iter: 0030	err: 0.001668	rank(L): 1017	card(S): 11345
+iter: 0060	err: 0.000029	rank(L): 1024	card(S): 11389
+iter: 0087	err: 0.000005	rank(L): 1024	card(S): 11390
 
 acc_all =
 
-  6x20 single gpuArray matrix
-
   Columns 1 through 7
 
-    0.8480    0.8482    0.8480    0.8482    0.8474    0.8513    0.8623
          0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-
-  Columns 8 through 14
-
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
+    0.1603    0.1603    0.1603    0.1603    0.1603    0.1601    0.1623
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
 
-  Columns 15 through 20
+  Columns 8 through 11
 
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
 
 dataset
      1
 
-iter: 0001	err: 0.319930	rank(L): 15	card(S): 512
-iter: 0030	err: 0.014435	rank(L): 512	card(S): 52258
-iter: 0060	err: 0.005316	rank(L): 712	card(S): 67925
-iter: 0090	err: 0.002499	rank(L): 824	card(S): 74889
-iter: 0120	err: 0.001296	rank(L): 890	card(S): 78937
-iter: 0150	err: 0.000694	rank(L): 932	card(S): 81593
-iter: 0180	err: 0.000371	rank(L): 959	card(S): 83389
-iter: 0210	err: 0.000198	rank(L): 964	card(S): 84525
-iter: 0240	err: 0.000104	rank(L): 965	card(S): 85264
-iter: 0270	err: 0.000053	rank(L): 966	card(S): 85737
-iter: 0300	err: 0.000026	rank(L): 966	card(S): 86000
-iter: 0330	err: 0.000012	rank(L): 966	card(S): 86158
-iter: 0360	err: 0.000005	rank(L): 966	card(S): 86252
-iter: 0361	err: 0.000005	rank(L): 966	card(S): 86253
-iter: 0001	err: 0.320198	rank(L): 16	card(S): 716
-iter: 0030	err: 0.014548	rank(L): 508	card(S): 52275
-iter: 0060	err: 0.005295	rank(L): 713	card(S): 68518
-iter: 0090	err: 0.002514	rank(L): 820	card(S): 75635
-iter: 0120	err: 0.001306	rank(L): 888	card(S): 79815
-iter: 0150	err: 0.000687	rank(L): 932	card(S): 82464
-iter: 0180	err: 0.000372	rank(L): 958	card(S): 84181
-iter: 0210	err: 0.000199	rank(L): 961	card(S): 85277
-iter: 0240	err: 0.000103	rank(L): 963	card(S): 86033
-iter: 0270	err: 0.000051	rank(L): 963	card(S): 86539
-iter: 0300	err: 0.000025	rank(L): 963	card(S): 86843
-iter: 0330	err: 0.000011	rank(L): 963	card(S): 87012
-iter: 0358	err: 0.000005	rank(L): 963	card(S): 87078
-iter: 0001	err: 0.313372	rank(L): 15	card(S): 701
-iter: 0030	err: 0.014557	rank(L): 499	card(S): 49742
-iter: 0060	err: 0.005390	rank(L): 703	card(S): 65657
-iter: 0090	err: 0.002548	rank(L): 816	card(S): 72722
-iter: 0120	err: 0.001321	rank(L): 885	card(S): 76985
-iter: 0150	err: 0.000713	rank(L): 929	card(S): 79901
-iter: 0180	err: 0.000384	rank(L): 958	card(S): 81792
-iter: 0210	err: 0.000202	rank(L): 963	card(S): 83070
-iter: 0240	err: 0.000110	rank(L): 963	card(S): 83742
-iter: 0270	err: 0.000056	rank(L): 963	card(S): 84346
-iter: 0300	err: 0.000027	rank(L): 963	card(S): 84640
-iter: 0330	err: 0.000012	rank(L): 963	card(S): 84793
-iter: 0360	err: 0.000005	rank(L): 963	card(S): 84874
-iter: 0362	err: 0.000005	rank(L): 963	card(S): 84875
-iter: 0001	err: 0.335417	rank(L): 17	card(S): 739
-iter: 0030	err: 0.014391	rank(L): 537	card(S): 58105
-iter: 0060	err: 0.005135	rank(L): 737	card(S): 73763
-iter: 0090	err: 0.002359	rank(L): 842	card(S): 80219
-iter: 0120	err: 0.001208	rank(L): 901	card(S): 83844
-iter: 0150	err: 0.000634	rank(L): 940	card(S): 86117
-iter: 0180	err: 0.000340	rank(L): 962	card(S): 87619
-iter: 0210	err: 0.000178	rank(L): 963	card(S): 88605
-iter: 0240	err: 0.000091	rank(L): 965	card(S): 89203
-iter: 0270	err: 0.000046	rank(L): 965	card(S): 89543
-iter: 0300	err: 0.000021	rank(L): 965	card(S): 89774
-iter: 0330	err: 0.000009	rank(L): 965	card(S): 89901
-iter: 0349	err: 0.000005	rank(L): 965	card(S): 89949
-iter: 0001	err: 0.320372	rank(L): 16	card(S): 507
-iter: 0030	err: 0.014620	rank(L): 527	card(S): 52853
-iter: 0060	err: 0.005251	rank(L): 733	card(S): 69164
-iter: 0090	err: 0.002401	rank(L): 841	card(S): 76315
-iter: 0120	err: 0.001196	rank(L): 906	card(S): 80219
-iter: 0150	err: 0.000628	rank(L): 943	card(S): 82632
-iter: 0180	err: 0.000337	rank(L): 963	card(S): 84218
-iter: 0210	err: 0.000175	rank(L): 967	card(S): 85241
-iter: 0240	err: 0.000087	rank(L): 968	card(S): 85908
-iter: 0270	err: 0.000043	rank(L): 968	card(S): 86321
-iter: 0300	err: 0.000020	rank(L): 968	card(S): 86537
-iter: 0330	err: 0.000008	rank(L): 968	card(S): 86648
-iter: 0345	err: 0.000005	rank(L): 968	card(S): 86696
+iter: 0001	err: 0.473082	rank(L): 11	card(S): 2435
+iter: 0030	err: 0.010363	rank(L): 805	card(S): 105126
+iter: 0060	err: 0.002885	rank(L): 919	card(S): 110281
+iter: 0090	err: 0.001064	rank(L): 959	card(S): 111943
+iter: 0120	err: 0.000437	rank(L): 976	card(S): 112675
+iter: 0150	err: 0.000175	rank(L): 984	card(S): 113091
+iter: 0180	err: 0.000064	rank(L): 988	card(S): 113273
+iter: 0210	err: 0.000019	rank(L): 990	card(S): 113358
+iter: 0238	err: 0.000005	rank(L): 991	card(S): 113382
+iter: 0001	err: 0.480599	rank(L): 10	card(S): 2753
+iter: 0030	err: 0.010287	rank(L): 807	card(S): 106052
+iter: 0060	err: 0.002850	rank(L): 919	card(S): 111212
+iter: 0090	err: 0.001093	rank(L): 957	card(S): 112913
+iter: 0120	err: 0.000434	rank(L): 976	card(S): 113704
+iter: 0150	err: 0.000173	rank(L): 984	card(S): 114171
+iter: 0180	err: 0.000061	rank(L): 988	card(S): 114389
+iter: 0210	err: 0.000018	rank(L): 990	card(S): 114458
+iter: 0237	err: 0.000005	rank(L): 990	card(S): 114490
+iter: 0001	err: 0.458498	rank(L): 10	card(S): 2233
+iter: 0030	err: 0.010487	rank(L): 800	card(S): 104470
+iter: 0060	err: 0.002954	rank(L): 916	card(S): 109930
+iter: 0090	err: 0.001105	rank(L): 958	card(S): 111757
+iter: 0120	err: 0.000448	rank(L): 976	card(S): 112558
+iter: 0150	err: 0.000174	rank(L): 986	card(S): 112981
+iter: 0180	err: 0.000064	rank(L): 989	card(S): 113179
+iter: 0210	err: 0.000019	rank(L): 991	card(S): 113250
+iter: 0239	err: 0.000005	rank(L): 991	card(S): 113286
+iter: 0001	err: 0.497552	rank(L): 11	card(S): 2276
+iter: 0030	err: 0.010068	rank(L): 822	card(S): 106529
+iter: 0060	err: 0.002700	rank(L): 928	card(S): 111468
+iter: 0090	err: 0.000980	rank(L): 964	card(S): 113053
+iter: 0120	err: 0.000389	rank(L): 979	card(S): 113750
+iter: 0150	err: 0.000145	rank(L): 987	card(S): 114093
+iter: 0180	err: 0.000049	rank(L): 990	card(S): 114232
+iter: 0210	err: 0.000013	rank(L): 992	card(S): 114288
+iter: 0230	err: 0.000005	rank(L): 992	card(S): 114297
+iter: 0001	err: 0.470611	rank(L): 10	card(S): 1852
+iter: 0030	err: 0.010238	rank(L): 814	card(S): 103745
+iter: 0060	err: 0.002800	rank(L): 924	card(S): 108980
+iter: 0090	err: 0.001036	rank(L): 962	card(S): 110753
+iter: 0120	err: 0.000416	rank(L): 978	card(S): 111528
+iter: 0150	err: 0.000164	rank(L): 986	card(S): 111926
+iter: 0180	err: 0.000057	rank(L): 990	card(S): 112106
+iter: 0210	err: 0.000017	rank(L): 991	card(S): 112165
+iter: 0234	err: 0.000005	rank(L): 992	card(S): 112187
 
 acc_all =
 
-  6x20 single gpuArray matrix
-
   Columns 1 through 7
 
-    0.8480    0.8482    0.8480    0.8482    0.8474    0.8513    0.8623
          0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-
-  Columns 8 through 14
-
-    0.9033         0         0         0         0         0         0
-         0         0         0         0         0         0         0
+    0.1603    0.1603    0.1603    0.1603    0.1603    0.1601    0.1623
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
          0         0         0         0         0         0         0
 
-  Columns 15 through 20
+  Columns 8 through 11
 
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
+         0         0         0         0
+    0.3099         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
 
 dataset
      1
 
-iter: 0001	err: 0.389451	rank(L): 6	card(S): 1050
-iter: 0030	err: 0.024051	rank(L): 216	card(S): 194559
-iter: 0060	err: 0.010179	rank(L): 322	card(S): 310185
-iter: 0090	err: 0.005296	rank(L): 400	card(S): 390463
-iter: 0120	err: 0.002927	rank(L): 456	card(S): 449652
-iter: 0150	err: 0.001634	rank(L): 498	card(S): 491770
-iter: 0180	err: 0.000913	rank(L): 528	card(S): 521459
-iter: 0210	err: 0.000506	rank(L): 542	card(S): 542030
-iter: 0240	err: 0.000274	rank(L): 545	card(S): 555638
-iter: 0270	err: 0.000144	rank(L): 547	card(S): 564435
-iter: 0300	err: 0.000072	rank(L): 547	card(S): 569918
-iter: 0330	err: 0.000034	rank(L): 547	card(S): 573184
-iter: 0360	err: 0.000014	rank(L): 547	card(S): 574888
-iter: 0390	err: 0.000005	rank(L): 547	card(S): 575662
-iter: 0392	err: 0.000005	rank(L): 547	card(S): 575704
-iter: 0001	err: 0.389380	rank(L): 5	card(S): 1255
-iter: 0030	err: 0.024006	rank(L): 214	card(S): 195760
-iter: 0060	err: 0.010140	rank(L): 319	card(S): 311865
-iter: 0090	err: 0.005289	rank(L): 396	card(S): 391333
-iter: 0120	err: 0.002937	rank(L): 453	card(S): 449149
-iter: 0150	err: 0.001655	rank(L): 496	card(S): 491205
-iter: 0180	err: 0.000928	rank(L): 524	card(S): 521373
-iter: 0210	err: 0.000517	rank(L): 538	card(S): 541720
-iter: 0240	err: 0.000281	rank(L): 543	card(S): 555629
-iter: 0270	err: 0.000148	rank(L): 546	card(S): 564762
-iter: 0300	err: 0.000075	rank(L): 546	card(S): 570411
-iter: 0330	err: 0.000035	rank(L): 546	card(S): 573821
-iter: 0360	err: 0.000015	rank(L): 546	card(S): 575514
-iter: 0390	err: 0.000006	rank(L): 546	card(S): 576356
-iter: 0394	err: 0.000005	rank(L): 546	card(S): 576429
-iter: 0001	err: 0.378429	rank(L): 5	card(S): 1178
-iter: 0030	err: 0.024157	rank(L): 214	card(S): 187277
-iter: 0060	err: 0.010278	rank(L): 321	card(S): 304003
-iter: 0090	err: 0.005346	rank(L): 398	card(S): 386465
-iter: 0120	err: 0.002931	rank(L): 457	card(S): 447191
-iter: 0150	err: 0.001635	rank(L): 499	card(S): 489979
-iter: 0180	err: 0.000913	rank(L): 528	card(S): 520000
-iter: 0210	err: 0.000504	rank(L): 540	card(S): 540662
-iter: 0240	err: 0.000274	rank(L): 545	card(S): 553992
-iter: 0270	err: 0.000145	rank(L): 546	card(S): 562949
-iter: 0300	err: 0.000073	rank(L): 547	card(S): 568320
-iter: 0330	err: 0.000034	rank(L): 547	card(S): 571657
-iter: 0360	err: 0.000014	rank(L): 547	card(S): 573423
-iter: 0390	err: 0.000005	rank(L): 547	card(S): 574240
-iter: 0392	err: 0.000005	rank(L): 547	card(S): 574272
-iter: 0001	err: 0.404712	rank(L): 6	card(S): 1281
-iter: 0030	err: 0.024031	rank(L): 223	card(S): 210967
-iter: 0060	err: 0.010107	rank(L): 331	card(S): 325704
-iter: 0090	err: 0.005224	rank(L): 408	card(S): 403515
-iter: 0120	err: 0.002845	rank(L): 465	card(S): 459802
-iter: 0150	err: 0.001575	rank(L): 505	card(S): 499990
-iter: 0180	err: 0.000871	rank(L): 533	card(S): 527584
-iter: 0210	err: 0.000478	rank(L): 545	card(S): 546468
-iter: 0240	err: 0.000256	rank(L): 548	card(S): 558933
-iter: 0270	err: 0.000133	rank(L): 550	card(S): 566812
-iter: 0300	err: 0.000065	rank(L): 551	card(S): 571758
-iter: 0330	err: 0.000029	rank(L): 551	card(S): 574476
-iter: 0360	err: 0.000012	rank(L): 551	card(S): 575927
-iter: 0385	err: 0.000005	rank(L): 551	card(S): 576506
-iter: 0001	err: 0.391887	rank(L): 6	card(S): 933
-iter: 0030	err: 0.024433	rank(L): 224	card(S): 204126
-iter: 0060	err: 0.010184	rank(L): 335	card(S): 324938
-iter: 0090	err: 0.005190	rank(L): 412	card(S): 405492
-iter: 0120	err: 0.002810	rank(L): 469	card(S): 462438
-iter: 0150	err: 0.001544	rank(L): 508	card(S): 502595
-iter: 0180	err: 0.000848	rank(L): 535	card(S): 529727
-iter: 0210	err: 0.000464	rank(L): 545	card(S): 547840
-iter: 0240	err: 0.000247	rank(L): 548	card(S): 559872
-iter: 0270	err: 0.000127	rank(L): 550	card(S): 567541
-iter: 0300	err: 0.000061	rank(L): 550	card(S): 572215
-iter: 0330	err: 0.000027	rank(L): 550	card(S): 574745
-iter: 0360	err: 0.000011	rank(L): 550	card(S): 576028
-iter: 0381	err: 0.000005	rank(L): 550	card(S): 576441
-
-acc_all =
-
-  6x20 single gpuArray matrix
-
-  Columns 1 through 7
-
-    0.8480    0.8482    0.8480    0.8482    0.8474    0.8513    0.8623
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-
-  Columns 8 through 14
-
-    0.9033    0.9283         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-         0         0         0         0         0         0         0
-
-  Columns 15 through 20
-
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-         0         0         0         0         0         0
-
-dataset
-     1
-
-iter: 0001	err: 0.494893	rank(L): 2	card(S): 1884
-iter: 0030	err: 0.028746	rank(L): 70	card(S): 414098
-iter: 0060	err: 0.011380	rank(L): 91	card(S): 624835
-iter: 0090	err: 0.005783	rank(L): 101	card(S): 755311
-iter: 0120	err: 0.003206	rank(L): 106	card(S): 844798
-iter: 0150	err: 0.001838	rank(L): 109	card(S): 907880
-iter: 0180	err: 0.001076	rank(L): 111	card(S): 952162
-iter: 0210	err: 0.000635	rank(L): 112	card(S): 983069
-iter: 0240	err: 0.000374	rank(L): 113	card(S): 1004651
-iter: 0270	err: 0.000222	rank(L): 112	card(S): 1019378
-iter: 0300	err: 0.000130	rank(L): 112	card(S): 1029668
-iter: 0330	err: 0.000076	rank(L): 112	card(S): 1036653
-iter: 0360	err: 0.000043	rank(L): 112	card(S): 1041337
-iter: 0390	err: 0.000024	rank(L): 112	card(S): 1044411
-iter: 0420	err: 0.000013	rank(L): 112	card(S): 1046347
-iter: 0450	err: 0.000007	rank(L): 112	card(S): 1047563
-iter: 0462	err: 0.000005	rank(L): 112	card(S): 1047851
-iter: 0001	err: 0.491924	rank(L): 3	card(S): 1990
-iter: 0030	err: 0.028374	rank(L): 68	card(S): 408462
-iter: 0060	err: 0.011320	rank(L): 89	card(S): 612183
-iter: 0090	err: 0.005856	rank(L): 97	card(S): 739738
-iter: 0120	err: 0.003295	rank(L): 103	card(S): 830354
-iter: 0150	err: 0.001908	rank(L): 108	card(S): 896586
-iter: 0180	err: 0.001122	rank(L): 110	card(S): 943862
-iter: 0210	err: 0.000668	rank(L): 110	card(S): 977209
-iter: 0240	err: 0.000398	rank(L): 110	card(S): 1000829
-iter: 0270	err: 0.000238	rank(L): 110	card(S): 1017197
-iter: 0300	err: 0.000140	rank(L): 110	card(S): 1028460
-iter: 0330	err: 0.000082	rank(L): 110	card(S): 1036418
-iter: 0360	err: 0.000047	rank(L): 110	card(S): 1041803
-iter: 0390	err: 0.000027	rank(L): 110	card(S): 1045341
-iter: 0420	err: 0.000014	rank(L): 110	card(S): 1047721
+iter: 0001	err: 0.509192	rank(L): 4	card(S): 2620
+iter: 0030	err: 0.023114	rank(L): 230	card(S): 289380
+iter: 0060	err: 0.009287	rank(L): 358	card(S): 399292
+iter: 0090	err: 0.004619	rank(L): 441	card(S): 468001
+iter: 0120	err: 0.002445	rank(L): 497	card(S): 513927
+iter: 0150	err: 0.001316	rank(L): 534	card(S): 544954
+iter: 0180	err: 0.000706	rank(L): 560	card(S): 565418
+iter: 0210	err: 0.000375	rank(L): 575	card(S): 578841
+iter: 0240	err: 0.000192	rank(L): 585	card(S): 587352
+iter: 0270	err: 0.000094	rank(L): 591	card(S): 592598
+iter: 0300	err: 0.000043	rank(L): 592	card(S): 595499
+iter: 0330	err: 0.000019	rank(L): 594	card(S): 596937
+iter: 0360	err: 0.000008	rank(L): 595	card(S): 597653
+iter: 0378	err: 0.000005	rank(L): 595	card(S): 597827
+iter: 0001	err: 0.515597	rank(L): 4	card(S): 2998
+iter: 0030	err: 0.022926	rank(L): 227	card(S): 290079
+iter: 0060	err: 0.009268	rank(L): 354	card(S): 398238
+iter: 0090	err: 0.004660	rank(L): 438	card(S): 465490
+iter: 0120	err: 0.002480	rank(L): 495	card(S): 511753
+iter: 0150	err: 0.001338	rank(L): 533	card(S): 543023
+iter: 0180	err: 0.000723	rank(L): 557	card(S): 564048
+iter: 0210	err: 0.000384	rank(L): 574	card(S): 577763
+iter: 0240	err: 0.000199	rank(L): 583	card(S): 586618
+iter: 0270	err: 0.000098	rank(L): 589	card(S): 592054
+iter: 0300	err: 0.000045	rank(L): 593	card(S): 595157
+iter: 0330	err: 0.000020	rank(L): 594	card(S): 596806
+iter: 0360	err: 0.000008	rank(L): 594	card(S): 597512
+iter: 0377	err: 0.000005	rank(L): 594	card(S): 597695
+iter: 0001	err: 0.494635	rank(L): 4	card(S): 2457
+iter: 0030	err: 0.023179	rank(L): 228	card(S): 284875
+iter: 0060	err: 0.009332	rank(L): 357	card(S): 396148
+iter: 0090	err: 0.004635	rank(L): 444	card(S): 465307
+iter: 0120	err: 0.002451	rank(L): 498	card(S): 512245
+iter: 0150	err: 0.001314	rank(L): 535	card(S): 543761
+iter: 0180	err: 0.000705	rank(L): 559	card(S): 564399
+iter: 0210	err: 0.000372	rank(L): 574	card(S): 578118
+iter: 0240	err: 0.000190	rank(L): 584	card(S): 586675
+iter: 0270	err: 0.000094	rank(L): 590	card(S): 591810
+iter: 0300	err: 0.000043	rank(L): 593	card(S): 594775
+iter: 0330	err: 0.000019	rank(L): 594	card(S): 596231
+iter: 0360	err: 0.000008	rank(L): 594	card(S): 596888
+iter: 0375	err: 0.000005	rank(L): 594	card(S): 597051
+iter: 0001	err: 0.536740	rank(L): 4	card(S): 2492
+iter: 0030	err: 0.023004	rank(L): 240	card(S): 303715
+iter: 0060	err: 0.009159	rank(L): 369	card(S): 412372
+iter: 0090	err: 0.004521	rank(L): 452	card(S): 477702
+iter: 0120	err: 0.002371	rank(L): 505	card(S): 521718
+iter: 0150	err: 0.001260	rank(L): 542	card(S): 550628
+iter: 0180	err: 0.000667	rank(L): 564	card(S): 569856
+iter: 0210	err: 0.000346	rank(L): 578	card(S): 582044
+iter: 0240	err: 0.000172	rank(L): 587	card(S): 589732
+iter: 0270	err: 0.000081	rank(L): 593	card(S): 594132
+iter: 0300	err: 0.000034	rank(L): 595	card(S): 596528
+iter: 0330	err: 0.000013	rank(L): 596	card(S): 597695
+iter: 0355	err: 0.000005	rank(L): 596	card(S): 598076
+iter: 0001	err: 0.508981	rank(L): 4	card(S): 1976
+iter: 0030	err: 0.023402	rank(L): 242	card(S): 299849
+iter: 0060	err: 0.009225	rank(L): 374	card(S): 412802
+iter: 0090	err: 0.004478	rank(L): 459	card(S): 480345
+iter: 0120	err: 0.002321	rank(L): 510	card(S): 524425
