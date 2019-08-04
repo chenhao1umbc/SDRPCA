@@ -13,7 +13,7 @@ else
     opt.C = 3; % how many classes
     X = X;
 end
-opt.maxiter = 1000; % for main loop
+opt.maxiter = 500; % for main loop
 opt.lam = 1e-4 ; % for fisher term
 opt.nu = 0.1 ;% for norm(E, 21), norm(E,1)
 opt.mumax = 1e8;
