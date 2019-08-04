@@ -56,15 +56,12 @@ def data_gen(data, labels, optdata):
     np.random.seed(optdata['seed']+100)
     ind_E = np.arange(MN)  # serialize the index
     np.random.shuffle(ind_E)  # shuffle index
-    data[ind_E[:oMN]] = np.random.randint(0, 255, oMN)  # randomly to corrupt
+    data[ind_E[:oMN]] = np.random.randint(0, 255, oMN)  # randomly corrupt
 
     data_norm = data / np.sqrt((data * data).sum(0))  # normalize per column
 
     # split data according to labels
     C = labels.max()
-    np.random.seed(optdata['seed'])
-    indx = np.arange(C)
-    np.random.shuffle(indx)
     if optdata['dataset'] == 'EYB':
         tr_len = 30
     if optdata['dataset'] == 'coil':
@@ -78,9 +75,25 @@ def data_gen(data, labels, optdata):
     xte_labels = np.array([])
 
     for i in range(C):
-        pass
+        current_label = np.where(labels == i)
+        start_point = current_label[0]
+        end_point = current_label[-1]
+
+        data_norm = data_norm.T
+        np.random.seed(optdata['seed'])
+        np.random.shuffle(data_norm[start_point:end_point, :])  # only shuffle the first dimension
+        data_norm = data_norm.T
+
+        xtr = np.c_[xtr, data_norm[:, start_point:start_point+tr_len]]
+        xtr_labels =np.c_[xtr_labels, labels[start_point:start_point+tr_len]]
+        xte = np.c_[xte, data_norm[:, start_point+tr_len:end_point]]
+        xte_labels = np.c_[xte_labels, labels[start_point+tr_len:end_point]]
+
+    # return xtr, xtr_labels, xte, xte_labels
+    return n2t(xtr), n2t(xte_labels), n2t(xte), n2t(xte_labels)
 
 
-
+def n2t(x):
+    return torch.from_numpy(x).float()
 
 
