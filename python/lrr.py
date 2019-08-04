@@ -7,6 +7,10 @@ data_sets = ['EYB','coil' 'AR']
 optdata={}
 optdata['ind_dataset'] = 1
 optdata['cv_fold'] = 5
+optdata['max_iter'] = 1000
+optdata['rng'] = 0
+optdata['o_per'] = 0.1
+optdata['gpu'] = torch.cuda.is_available()
 load_data()
 
 lamb_set = 2.^(-(-3:16));

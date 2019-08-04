@@ -53,7 +53,7 @@ def data_gen(data, labels, optdata):
     M, N = data.shape  # M is dimension, N is sample size
     MN = M * N
     oMN = int(optdata['o_per'] * MN)  # how mnay are corrupted
-    np.random.seed(optdata['seed']+100)
+    np.random.seed(optdata['rng']+100)
     ind_E = np.arange(MN)  # serialize the index
     np.random.shuffle(ind_E)  # shuffle index
     data[ind_E[:oMN]] = np.random.randint(0, 255, oMN)  # randomly corrupt
@@ -80,7 +80,7 @@ def data_gen(data, labels, optdata):
         end_point = current_label[-1]
 
         data_norm = data_norm.T
-        np.random.seed(optdata['seed'])
+        np.random.seed(optdata['rng'])
         np.random.shuffle(data_norm[start_point:end_point, :])  # only shuffle the first dimension
         data_norm = data_norm.T
 
@@ -95,5 +95,19 @@ def data_gen(data, labels, optdata):
 
 def n2t(x):
     return torch.from_numpy(x).float()
+
+
+def train_lrr(x, dict, lamb, optdata):
+    pass
+
+
+def get_prj(x):
+    x0 = x-x.mean(1)
+    u, s, _ = torch.svd(x0@x0.t())
+    threshold = 1e4
+    min_s = s.max()/threshold
+    P = u[:, :s[s>min_s].shape[0]].t()
+    return P
+
 
 
