@@ -97,9 +97,53 @@ def n2t(x):
     return torch.from_numpy(x).float()
 
 
-def train_lrr(x, dict, lamb, optdata):
-    pass
+def train_lrr(X, A, lamb, optdata):
+    # initialization
+    m, n = X.shape
+    mu = 0.1 * lamb
+    atx = A.t()@X
+    inv_a = torch.inverse(A.t()@A + torch.eye(m))
 
+    J = torch.zeros(n, n).cuda if optdata['use_gpu'] else torch.zeros(n, n)
+    Z = torch.zeros(n, n).cuda if optdata['use_gpu'] else torch.zeros(n, n)
+    E = torch.zeros(m, n).cuda if optdata['use_gpu'] else torch.zeros(n, n)
+    Y1 = torch.zeros(m, n).cuda if optdata['use_gpu'] else torch.zeros(n, n)
+    Y2 = torch.zeros(n, n).cuda if optdata['use_gpu'] else torch.zeros(n, n)
+    diff = torch.zeros(optdata['max_iter'])
+
+    for iter in range(optdata['max_iter']):
+        # update J
+        temp = Z + Y2 / mu;
+        [U, sigma, V] = torch.svd(temp)
+        svp = sigma[sigma>1/mu].shape[0]
+        if svp > 1:
+            sigma = sigma[:svp] - 1/mu
+        else:
+            svp, sigma = 1, 0
+        J = U[:,:svp]@sigma.diag()*V[:,:svp].t()
+
+        # update Z
+        Z = inv_a * (atx - A.t()@E+J+(A.t()@Y1-Y2) / mu)
+
+        # update E
+        xmaz = X - A @ Z
+        temp = xmaz + Y1 / mu
+        E = np.maximum(0, temp - lamb / mu)+np.minimum(0, temp + lamb / mu)
+
+        # when to stop
+        leq1 = xmaz - E
+        leq2 = Z - J
+        stopC = np.maximum(leq1.abs().max(), leq2.abs().max())
+        diff[iter] = stopC;
+        if iter > 10 and (abs(diff(iter) - diff(iter - 10)) / abs(diff(iter)) < 1e-3)
+            break
+        end
+        if stopC < optdata['tol'] :
+            break
+        else:
+            Y1 = Y1 + mu * leq1
+            Y2 = Y2 + mu * leq2
+            mu = np.minimum(optdata['max_mu'], mu * optdata['rho'])
 
 def get_prj(x):
     x0 = x-x.mean(1)
