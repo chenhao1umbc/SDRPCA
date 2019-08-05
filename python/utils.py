@@ -134,13 +134,13 @@ def train_lrr(X, A, lamb, optdata):
         xmaz = X - A @ Z
         temp = xmaz + Y1 / mu
         E_temp = np.maximum(0, (temp - lamb / mu).cpu().numpy())+np.minimum(0, (temp + lamb / mu).cpu().numpy())
-        E = E_temp if not optdata['use_gpu'] else torch.from_numpy(E_temp).cuda()
+        E = torch.from_numpy(E_temp) if not optdata['use_gpu'] else torch.from_numpy(E_temp).cuda()
 
         # when to stop
         leq1 = xmaz - E
         leq2 = Z - J
         stopC = np.maximum(leq1.abs().max().cpu().numpy(), leq2.abs().max().cpu().numpy())
-        diff[i] = stopC
+        diff[i] = torch.from_numpy(np.array([stopC]))
         if i > 10 and (abs(diff[i] - diff[i - 10]) / abs(diff[i]) < 1e-3):
             break
         if stopC < optdata['tol']:
