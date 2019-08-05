@@ -40,6 +40,7 @@ for i in data_sets:
                 knn.fit((P@xtr).t(), y_tr)
                 y_hat = knn.predict((P@xte).t())
                 acc = acc + metrics.accuracy_score(y_te, y_hat)
+                torch.cuda.empty_cache()
             acc_all.append(acc/5)
             with open('lrr', 'a') as f:
                 f.write('dataset is '+str(i)+'outlier percentage is '+str(o)+'lambda is '+str(l)+'current acc is '+str(acc/5)+'\n')

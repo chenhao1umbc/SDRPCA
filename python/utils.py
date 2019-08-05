@@ -149,7 +149,7 @@ def train_lrr(X, A, lamb, optdata):
             Y1 = Y1 + mu * leq1
             Y2 = Y2 + mu * leq2
             mu = np.minimum(optdata['max_mu'], mu * optdata['rho'])
-    return Z, E
+    return Z.cpu(), E.cpu()
 
 
 
