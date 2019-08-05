@@ -41,5 +41,6 @@ for i in data_sets:
                 y_hat = knn.predict((P@xte).t())
                 acc = acc + metrics.accuracy_score(y_te, y_hat)
             acc_all.append(acc/5)
+            print(acc_all)
 
-print(acc_all)
+np.savetxt('acc_all', acc_all)
