@@ -138,7 +138,7 @@ def train_lrr(X, A, lamb, optdata):
         # when to stop
         leq1 = xmaz - E
         leq2 = Z - J
-        stopC = np.maximum(leq1.abs().max(), leq2.abs().max())
+        stopC = np.maximum(leq1.abs().max().cpu().numpy(), leq2.abs().max().cpu().numpy())
         diff[i] = stopC
         if i > 10 and (abs(diff[i] - diff[i - 10]) / abs(diff[i]) < 1e-3):
             break
