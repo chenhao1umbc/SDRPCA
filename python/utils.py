@@ -168,7 +168,6 @@ def max0(x):
     return x
 
 
-
 def min0(x):
     x[x>0] = 0
     return x
