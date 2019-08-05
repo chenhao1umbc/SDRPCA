@@ -165,9 +165,12 @@ def get_prj(x):
 def max0(x):
     """x, 0 are torch tensors or numbers"""
     x[x<0] = 0
+    return x
+
 
 
 def min0(x):
     x[x>0] = 0
+    return x
 
 
