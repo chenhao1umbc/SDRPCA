@@ -116,6 +116,7 @@ def train_lrr(X, A, lamb, optdata):
 
     # body of algorithm
     for i in range(optdata['max_iter']):
+        print(i)
         # update J
         temp = Z + Y2 / mu;
         [U, sigma, V] = torch.svd(temp)
@@ -133,24 +134,22 @@ def train_lrr(X, A, lamb, optdata):
         # update E
         xmaz = X - A @ Z
         temp = xmaz + Y1 / mu
-        E_temp = np.maximum(0, (temp - lamb / mu).cpu().numpy())+np.minimum(0, (temp + lamb / mu).cpu().numpy())
-        E = torch.from_numpy(E_temp) if not optdata['use_gpu'] else torch.from_numpy(E_temp).cuda()
+        E = max0(temp - lamb / mu) + min0((temp + lamb / mu))
 
         # when to stop
         leq1 = xmaz - E
         leq2 = Z - J
-        stopC = np.maximum(leq1.abs().max().cpu().numpy(), leq2.abs().max().cpu().numpy())
-        diff[i] = torch.from_numpy(np.array([stopC]))
+        stopC = max(leq1.abs().max(), leq2.abs().max())
+        diff[i] = stopC
         if i > 10 and (abs(diff[i] - diff[i - 10]) / abs(diff[i]) < 1e-3):
             break
-        if stopC < optdata['tol']:
+        if (stopC < optdata['tol']).item():
             break
         else:
             Y1 = Y1 + mu * leq1
             Y2 = Y2 + mu * leq2
             mu = np.minimum(optdata['max_mu'], mu * optdata['rho'])
     return Z.cpu(), E.cpu()
-
 
 
 def get_prj(x):
@@ -162,5 +161,13 @@ def get_prj(x):
     P = u[:, :s[s>min_s].shape[0]].t()
     return P
 
+
+def max0(x):
+    """x, 0 are torch tensors or numbers"""
+    x[x<0] = 0
+
+
+def min0(x):
+    x[x>0] = 0
 
 
