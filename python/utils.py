@@ -154,12 +154,13 @@ def train_lrr(X, A, lamb, optdata):
 
 
 def get_prj(x):
+    '''This function is using cpu & pytorch to compute'''
     x0 = x- x.mean(1).reshape(x.shape[0], -1)
     u, s, _ = torch.svd(x0@x0.t())
     threshold = 1e4
     min_s = s.max()/threshold
     P = u[:, :s[s>min_s].shape[0]].t()
-    return P.cpu()
+    return P
 
 
 

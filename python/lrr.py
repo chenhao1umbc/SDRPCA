@@ -8,7 +8,7 @@ optdata={}
 optdata['dataset'] = data_sets[0]
 optdata['ind_dataset'] = 1
 optdata['cv_fold'] = 5
-optdata['max_iter'] = 1
+optdata['max_iter'] = 500
 optdata['rng'] = 0
 optdata['o_per'] = 0.1
 optdata['use_gpu'] = torch.cuda.is_available()
@@ -45,4 +45,4 @@ for i in data_sets:
             with open('lrr', 'a') as f:
                 f.write('dataset is '+str(i)+'outlier percentage is '+str(o)+'lambda is '+str(l)+'current acc is '+str(acc/5)+'\n')
 
-np.save('acc_all', acc_all)
+np.save('acc_lrr', acc_all)
