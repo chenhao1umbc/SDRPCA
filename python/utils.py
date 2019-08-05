@@ -105,7 +105,7 @@ def train_lrr(X, A, lamb, optdata):
     m, n = X.shape
     mu = 0.1 * lamb
     atx = A.t()@X
-    inv_a = torch.inverse(A.t()@A + torch.eye(n))
+    inv_a = torch.inverse(A.t()@A + torch.eye(n)) if not optdata['use_gpu'] else torch.inverse(A.t()@A + torch.eye(n).cuda())
 
     J = torch.zeros(n, n).cuda() if optdata['use_gpu'] else torch.zeros(n, n)
     Z = torch.zeros(n, n).cuda() if optdata['use_gpu'] else torch.zeros(n, n)
