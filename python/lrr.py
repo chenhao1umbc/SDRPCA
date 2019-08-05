@@ -42,7 +42,7 @@ for i in data_sets:
                 acc = acc + metrics.accuracy_score(y_te, y_hat)
                 torch.cuda.empty_cache()
             acc_all.append(acc/5)
-            with open('lrr', 'a') as f:
+            with open('lrr_log', 'a') as f:
                 f.write('dataset is '+str(i)+'outlier percentage is '+str(o)+'lambda is '+str(l)+'current acc is '+str(acc/5)+'\n')
 
 np.save('acc_lrr', acc_all)
