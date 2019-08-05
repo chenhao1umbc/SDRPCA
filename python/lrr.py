@@ -8,7 +8,7 @@ optdata={}
 optdata['dataset'] = data_sets[0]
 optdata['ind_dataset'] = 1
 optdata['cv_fold'] = 5
-optdata['max_iter'] = 500
+optdata['max_iter'] = 1
 optdata['rng'] = 0
 optdata['o_per'] = 0.1
 optdata['use_gpu'] = torch.cuda.is_available()
@@ -41,6 +41,7 @@ for i in data_sets:
                 y_hat = knn.predict((P@xte).t())
                 acc = acc + metrics.accuracy_score(y_te, y_hat)
             acc_all.append(acc/5)
-            print(acc_all)
+            with open('lrr', 'a') as f:
+                f.write('dataset is '+str(i)+'outlier percentage is '+str(o)+'lambda is '+str(l)+'current acc is '+str(acc/5)+'\n')
 
-np.savetxt('acc_all', acc_all)
+np.save('acc_all', acc_all)

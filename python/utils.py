@@ -28,20 +28,20 @@ def load_data(name='EYB'):
 
 
 def load_ar():
-    data = pd.read_csv('AR55x40.csv', header=None).to_numpy()
-    labels = pd.read_csv('AR55x40_labels.csv', header=None).to_numpy().squeeze()
+    data = pd.read_csv('csvdata/AR55x40.csv', header=None).to_numpy()
+    labels = pd.read_csv('csvdata/AR55x40_labels.csv', header=None).to_numpy().squeeze()
     return data, labels
 
 
 def load_eyb():
-    data = pd.read_csv('EYB32x32.csv',header=None).to_numpy()
-    labels = pd.read_csv('EYB32x32_labels.csv',header=None).to_numpy().squeeze()
+    data = pd.read_csv('csvdata/EYB32x32.csv',header=None).to_numpy()
+    labels = pd.read_csv('csvdata/EYB32x32_labels.csv',header=None).to_numpy().squeeze()
     return data, labels
 
 
 def load_coil():
-    data = pd.read_csv('coil20.csv',header=None).to_numpy()
-    labels = pd.read_csv('coil20_labels.csv',header=None).to_numpy().squeeze()
+    data = pd.read_csv('csvdata/coil20.csv',header=None).to_numpy()
+    labels = pd.read_csv('csvdata/coil20_labels.csv',header=None).to_numpy().squeeze()
     return data, labels
 
 
