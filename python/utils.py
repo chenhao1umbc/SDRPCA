@@ -22,27 +22,30 @@ def so(tau, X):
 
 
 def load_data(name='EYB'):
-    if name == 'AR': return load_ar()
+    if name == 'AR':
+        d, l = load_ar()
+        return d, l
     if name == 'EYB': return load_eyb()
     if name == 'coil': return load_coil()
 
 
-def load_ar():
+def load_ar(n=0):
     data = pd.read_csv('csvdata/AR55x40.csv', header=None).to_numpy()
     labels = pd.read_csv('csvdata/AR55x40_labels.csv', header=None).to_numpy().squeeze()
-    return data, labels
+    print(n)
+    return data.copy(), labels.copy() # otherwise, data.ravel()[0] = 999, not working
 
 
 def load_eyb():
     data = pd.read_csv('csvdata/EYB32x32.csv',header=None).to_numpy()
     labels = pd.read_csv('csvdata/EYB32x32_labels.csv',header=None).to_numpy().squeeze()
-    return data, labels
+    return data.copy(), labels.copy()
 
 
 def load_coil():
     data = pd.read_csv('csvdata/coil20.csv',header=None).to_numpy()
     labels = pd.read_csv('csvdata/coil20_labels.csv',header=None).to_numpy().squeeze()
-    return data, labels
+    return data.copy(), labels.copy()
 
 
 def data_gen(data, labels, optdata):

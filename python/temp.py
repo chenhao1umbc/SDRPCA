@@ -2,13 +2,13 @@
 from utils import *
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
-data_sets = ['EYB', 'coil', 'AR']
+data_sets = ['coil', 'AR','EYB', ]
 
 optdata={}
 optdata['dataset'] = data_sets[0]
 optdata['ind_dataset'] = 1
-optdata['cv_fold'] = 5
-optdata['max_iter'] = 100
+optdata['cv_fold'] = 1
+optdata['max_iter'] = 3
 optdata['rng'] = 0
 optdata['o_per'] = 0.1
 optdata['use_gpu'] = torch.cuda.is_available()
@@ -38,8 +38,11 @@ def train_temp(X, A, lamb, optdata):
         t = time.time()
         # update J
         temp = Z + Y2 / mu
-        U, sigma, V = torch.svd(temp.cpu())
-        if optdata['use_gpu']: U, sigma, V = U.cuda(), sigma.cuda(), V.cuda()
+        U, sigma, V = np.linalg.svd(temp.cpu().numpy())
+        if optdata['use_gpu']:
+            U, sigma, V = torch.from_numpy(U).cuda(), torch.from_numpy(sigma).cuda(), torch.from_numpy(V).cuda()
+        else:
+            U, sigma, V = torch.from_numpy(U), torch.from_numpy(sigma), torch.from_numpy(V)
 
         svp = sigma[sigma>1/mu].shape[0]
         if svp > 1:
@@ -78,7 +81,7 @@ data, labels = load_data()
 knn = KNN(5)
 
 o_per_sets = np.arange(0.0, 0.6, 0.1)
-lam_sets = [2**i for i in range(3, -16, -1)]
+lam_sets = [2**i for i in range(1, -1, -1)]
 cv_fold_sets = range(optdata['cv_fold'])
 acc_all = []
 
@@ -98,7 +101,9 @@ for i in data_sets:
                 acc = acc + metrics.accuracy_score(y_te, y_hat)
                 torch.cuda.empty_cache()
             acc_all.append(acc/5)
-            with open('temp_log', 'a') as f:
-                f.write('dataset is '+str(i)+'outlier percentage is '+str(o)+'lambda is '+str(l)+'current acc is '+str(acc/5)+'\n')
+            # with open('temp_log', 'a') as f:
+            #     f.write('dataset is '+str(i)+'outlier percentage is '+str(o)+'lambda is '+str(l)+'current acc is '+str(acc/5)+'\n')
 
 np.save('acc_temp', acc_all)
+
+
