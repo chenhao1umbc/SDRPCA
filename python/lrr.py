@@ -16,11 +16,7 @@ optdata['tol'] = 5e-6  # tolerance
 optdata['rho'] = 1.1  # mu exponentially increase
 optdata['max_mu'] = 1e8
 
-
-# no outlier added just loading the data, in numpy format
-data, labels = load_data()
 knn = KNN(5)
-
 o_per_sets = np.arange(0.0, 0.6, 0.1)
 lam_sets = [2**i for i in range(3, -16, -1)]
 cv_fold_sets = range(optdata['cv_fold'])
@@ -28,6 +24,8 @@ acc_all = []
 
 for i in data_sets:
     optdata['dataset'] = i
+    # no outlier added just loading the data, in numpy format
+    data, labels = load_data(optdata['dataset'])
     for o in o_per_sets:
         optdata['o_per'] = o
         for l in lam_sets:

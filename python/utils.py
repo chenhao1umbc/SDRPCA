@@ -22,9 +22,7 @@ def so(tau, X):
 
 
 def load_data(name='EYB'):
-    if name == 'AR':
-        d, l = load_ar()
-        return d, l
+    if name == 'AR': return load_ar()
     if name == 'EYB': return load_eyb()
     if name == 'coil': return load_coil()
 
