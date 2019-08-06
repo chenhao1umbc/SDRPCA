@@ -118,7 +118,7 @@ def train_lrr(X, A, lamb, optdata):
     for i in range(optdata['max_iter']):
         print(i)
         # update J
-        temp = Z + Y2 / mu;
+        temp = Z + Y2 / mu
         [U, sigma, V] = torch.svd(temp)
         svp = sigma[sigma>1/mu].shape[0]
         if svp > 1:
