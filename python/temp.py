@@ -80,7 +80,7 @@ def train_temp(X, A, lamb, optdata):
 data, labels = load_data()
 knn = KNN(5)
 
-o_per_sets = np.arange(0.0, 0.6, 0.1)
+o_per_sets = np.arange(0.3, 0.6, 0.1)
 lam_sets = [2**i for i in range(1, -1, -1)]
 cv_fold_sets = range(optdata['cv_fold'])
 acc_all = []
