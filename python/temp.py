@@ -104,6 +104,6 @@ for i in data_sets:
             # with open('temp_log', 'a') as f:
             #     f.write('dataset is '+str(i)+'outlier percentage is '+str(o)+'lambda is '+str(l)+'current acc is '+str(acc/5)+'\n')
 
-np.save('acc_temp', acc_all)
+        np.save('acc_temp', acc_all)
 
 
