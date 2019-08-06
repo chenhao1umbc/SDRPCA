@@ -8,7 +8,7 @@ optdata={}
 optdata['dataset'] = data_sets[0]
 optdata['ind_dataset'] = 1
 optdata['cv_fold'] = 5
-optdata['max_iter'] = 500
+optdata['max_iter'] = 100
 optdata['rng'] = 0
 optdata['o_per'] = 0.1
 optdata['use_gpu'] = torch.cuda.is_available()
@@ -35,10 +35,12 @@ def train_temp(X, A, lamb, optdata):
 
     # body of algorithm
     for i in range(optdata['max_iter']):
-        print(i)
+        t = time.time()
         # update J
-        temp = Z + Y2 / mu;
-        [U, sigma, V] = torch.svd(temp)
+        temp = Z + Y2 / mu
+        U, sigma, V = torch.svd(temp.cpu())
+        if optdata['use_gpu']: U, sigma, V = U.cuda(), sigma.cuda(), V.cuda()
+
         svp = sigma[sigma>1/mu].shape[0]
         if svp > 1:
             sigma = sigma[:svp] - 1/mu
@@ -68,7 +70,7 @@ def train_temp(X, A, lamb, optdata):
             Y1 = Y1 + mu * leq1
             Y2 = Y2 + mu * leq2
             mu = np.minimum(optdata['max_mu'], mu * optdata['rho'])
-            print(stopC, 'current iter', i)
+            if not i%30 : print('cost:', stopC, 'current iter', i, 'iteration time is ', time.time()-t)
     return Z.cpu(), E.cpu()
 
 # no outlier added just loading the data, in numpy format

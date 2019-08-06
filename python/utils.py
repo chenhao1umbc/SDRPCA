@@ -116,10 +116,10 @@ def train_lrr(X, A, lamb, optdata):
 
     # body of algorithm
     for i in range(optdata['max_iter']):
-        print(i)
         # update J
-        temp = Z + Y2 / mu;
-        [U, sigma, V] = torch.svd(temp)
+        temp = Z + Y2 / mu
+        U, sigma, V = torch.svd(temp.cpu())
+        if optdata['use_gpu']: U, sigma, V = U.cuda(), sigma.cuda(), V.cuda()
         svp = sigma[sigma>1/mu].shape[0]
         if svp > 1:
             sigma = sigma[:svp] - 1/mu
