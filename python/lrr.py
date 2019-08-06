@@ -2,7 +2,7 @@
 from utils import *
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
-data_sets = ['EYB', 'coil', 'AR']
+data_sets = ['AR, ''coil', 'EYB']
 
 optdata={}
 optdata['dataset'] = data_sets[0]

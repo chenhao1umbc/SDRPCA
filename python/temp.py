@@ -2,13 +2,13 @@
 from utils import *
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
-data_sets = ['coil', 'AR','EYB', ]
+data_sets = ['AR', 'coil', 'EYB']
 
 optdata={}
 optdata['dataset'] = data_sets[0]
 optdata['ind_dataset'] = 1
 optdata['cv_fold'] = 1
-optdata['max_iter'] = 3
+optdata['max_iter'] = 500
 optdata['rng'] = 0
 optdata['o_per'] = 0.1
 optdata['use_gpu'] = torch.cuda.is_available()
@@ -38,11 +38,8 @@ def train_temp(X, A, lamb, optdata):
         t = time.time()
         # update J
         temp = Z + Y2 / mu
-        U, sigma, V = np.linalg.svd(temp.cpu().numpy())
-        if optdata['use_gpu']:
-            U, sigma, V = torch.from_numpy(U).cuda(), torch.from_numpy(sigma).cuda(), torch.from_numpy(V).cuda()
-        else:
-            U, sigma, V = torch.from_numpy(U), torch.from_numpy(sigma), torch.from_numpy(V)
+        U, sigma, V = torch.svd(temp.cpu() + 1e-5*torch.rand(n, n))
+        if optdata['use_gpu']: U, sigma, V = U.cuda(), sigma.cuda(), V.cuda()
 
         svp = sigma[sigma>1/mu].shape[0]
         if svp > 1:
@@ -73,7 +70,7 @@ def train_temp(X, A, lamb, optdata):
             Y1 = Y1 + mu * leq1
             Y2 = Y2 + mu * leq2
             mu = np.minimum(optdata['max_mu'], mu * optdata['rho'])
-            if not i%30 : print('cost:', stopC, 'current iter', i, 'iteration time is ', time.time()-t)
+            if not i%1 : print('cost:', stopC, 'current iter', i, 'iteration time is ', time.time()-t)
     return Z.cpu(), E.cpu()
 
 # no outlier added just loading the data, in numpy format

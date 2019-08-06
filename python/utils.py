@@ -119,7 +119,7 @@ def train_lrr(X, A, lamb, optdata):
     for i in range(optdata['max_iter']):
         # update J
         temp = Z + Y2 / mu
-        U, sigma, V = torch.svd(temp.cpu())
+        U, sigma, V = torch.svd(temp.cpu() + 1e-5*torch.rand(n, n))
         if optdata['use_gpu']: U, sigma, V = U.cuda(), sigma.cuda(), V.cuda()
         svp = sigma[sigma>1/mu].shape[0]
         if svp > 1:
