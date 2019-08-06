@@ -70,7 +70,7 @@ def train_temp(X, A, lamb, optdata):
             Y1 = Y1 + mu * leq1
             Y2 = Y2 + mu * leq2
             mu = np.minimum(optdata['max_mu'], mu * optdata['rho'])
-            print('cost:', stopC, 'current iter', i, 'iteration time is ', time.time()-t)
+            if not i%30 : print('cost:', stopC, 'current iter', i, 'iteration time is ', time.time()-t)
     return Z.cpu(), E.cpu()
 
 # no outlier added just loading the data, in numpy format
