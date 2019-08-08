@@ -25,7 +25,7 @@ inv_a = inv(A'*A+eye(m));
 J = zeros(m,n); if optdata.gpu ==1; J = gpu(J); end
 Z = zeros(m,n); if optdata.gpu ==1; Z = gpu(Z); end
 E = zeros(d,n);if optdata.gpu ==1; E = gpu(E); end
-
+theta = 1e-3*rand(m,n); if optdata.gpu == 1; theta = gpu(theta); end
 Y1 = zeros(d,n); if optdata.gpu ==1; Y1 = gpu(Y1); end
 Y2 = zeros(m,n); if optdata.gpu ==1; Y2 = gpu(Y2); end
 %% Start main loop
@@ -38,7 +38,11 @@ while iter<maxIter
     iter = iter + 1;
     %update J
     temp = Z + Y2/mu;
-    [U,sigma,V] = svd(temp,'econ');
+    try
+        [U,sigma,V] = svd(temp,'econ');
+    catch
+        [U,sigma,V] = svd(temp+theta,'econ');
+    end
     sigma = diag(sigma);
     svp = length(find(sigma>1/mu));
     if svp>=1

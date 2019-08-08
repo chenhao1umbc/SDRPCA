@@ -22,7 +22,7 @@ optdata.rng = 0;
 [X0,X0cv,X0test,T] = datgen(optdata); 
 M = size(X0.data,1); % data dimension
 cv_fold = 5; % 3 folds cross-validation
-lamb_set = 2.^(-(-3:16));
+lamb_set = 2.^(-(-3:12));
 o_per_set = 0:0.1:0.5;
 acc = 0;
 
@@ -32,7 +32,7 @@ for s = 1:3
     optdata.ind_dataset = s;% 1 is Extended Yale B, 0 is toy data
     acc_all = zeros(length(o_per_set), length(lamb_set));
     if optdata.gpu,  acc_all = gpu(zeros(length(o_per_set), length(lamb_set))); end
-for o_per = 2:length(o_per_set)
+for o_per = 1:length(o_per_set)
 for l = 1:length(lamb_set)
 for i = 1:cv_fold
 optdata.o_per = o_per_set(o_per);% outlier percentage
