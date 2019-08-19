@@ -28,7 +28,7 @@ acc = 0;
 
 %%
 tic
-for s = 1:3
+for s = 2:3
     optdata.ind_dataset = s;% 1 is Extended Yale B, 0 is toy data
     acc_all = zeros(length(o_per_set), length(nu_set));
     if optdata.gpu,  acc_all = gpu(zeros(length(o_per_set), length(nu_set))); end
