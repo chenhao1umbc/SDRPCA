@@ -5,8 +5,14 @@
                                March 8, 2019
 
  
-To get started, type doc.
+For online documentation, see https://www.mathworks.com/support
 For product information, visit www.mathworks.com.
  
 >> >> >> >> >> >> >> >> >> >> GPU is not available, calculating on cpu 
->> >> >> >> >> >> >> >> >> >> >> >> >> >> 
+>> >> >> >> >> >> >> >> >> >> >> >> >> >> >> [Warning:
+Connection to the X11 Display Server (localhost:10.0) has been lost.
+No more graphics windows can no longer be displayed in this session.
+Graphics Objects can still be printed, and all commands should still work.
+We recommend that you try to save your current session and exit.] 
+>> Elapsed time is 559.278225 seconds.
+>> >> >> 
