@@ -25,29 +25,42 @@ optdata.rng = 0; % random seed
 [Var0, opt] = initdata(X, optdata);
 cv_fold = 5; % 3 folds cross-validation
 nu_set = 2.^(-(-3:16));
+lam_set = 2.^(-(-3:16));
 o_per_set = 0:0.1:0.5;
 acc = 0;
 %%
 tic
 for s = 1:3
-    optdata.ind_dataset = s;% 1 is Extended Yale B, 0 is toy data
-    acc_all = zeros(length(o_per_set), length(nu_set));
-    if optdata.gpu,  acc_all = gpu(zeros(length(o_per_set), length(nu_set))); end
-for o_per = 1:length(o_per_set)
-for n = 1:length(nu_set)
+optdata.ind_dataset = s;% 1 is Extended Yale B, 0 is toy data
+acc_all = zeros(length(o_per_set), length(nu_set));
+if optdata.gpu,  acc_all = gpu(zeros(length(o_per_set), length(nu_set))); end
+    for o_per = 1:length(o_per_set)
+    for n = 1:length(nu_set)
+    for l = 1: length(lam_set)
+        for i = 1:cv_fold    
+        optdata.o_per = o_per_set(o_per);% outlier percentage
+        optdata.rng = i; % random seed
+        [X0,X0cv,X0test,T] = datgen(optdata); 
+        [X,Xcv,Xtest,E] = out_norm(X0, X0cv, X0test, optdata);
+        Xcv = Xtest;
 
-for i = 1:cv_fold    
-optdata.o_per = o_per_set(o_per);% outlier percentage
-optdata.rng = i; % random seed
+        [Var0, opt] = initdata(X, optdata);
+        opt.nu = nu_set(n); % try 0.05 0.1 0.5
+        opt.lam = lam_set(l);% for fishe
+        opt.percentage = 0.9;
+        Var = traincdp(X.data, Var0, opt);
+        Proj = Var.Ptilde'*Var.P;
+        Xtr = Proj*X.data;
 
-% KNN classifier
-acc = acc + myknn(Xtr, X.label(1,:), Xtest, Proj); % k = 5
-end
+        % KNN classifier
+        acc = acc + myknn(Xtr, X.label(1,:), Xtest, Proj); % k = 5
+        end
     acc_all(o_per, n) = acc/cv_fold
     disp('dataset'); disp(s); 
     acc = 0;
-end
-end    
+    end
+    end    
+    end
 end
 toc
 
@@ -57,7 +70,7 @@ toc
 
 
 
-
+% {
 for ii = 1:6
 optdata.o_per = 0.1*(ii -1);% outlier percentage
 optdata.outlier_type = 'l1'; % l1 is l1 norm, l21 is l21 norm, no other options
@@ -128,3 +141,4 @@ if strcmp('l1', optdata.outlier_type)
 else
     run plotEP_l21    
 end
+%}

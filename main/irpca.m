@@ -22,7 +22,7 @@ optdata.rng = 0;
 [X0,X0cv,X0test,T] = datgen(optdata); 
 M = size(X0.data,1); % data dimension
 cv_fold = 5; % 3 folds cross-validation
-nu_set = 2.^(-(-3:16));
+nu_set = 2.^(-(-3:16));  % L1 norm panelty
 o_per_set = 0:0.1:0.5;
 acc = 0;
 
