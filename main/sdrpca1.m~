@@ -33,7 +33,7 @@ tic
 for s = 1:3
 optdata.ind_dataset = s;% 1 is Extended Yale B, 0 is toy data
 acc_all = zeros(length(o_per_set), length(nu_set), length(lam_set));
-if optdata.gpu,  acc_all = gpu(zeros(length(o_per_set), length(nu_set)), length(lam_set)); end
+if optdata.gpu,  acc_all = gpu(zeros(length(o_per_set), length(nu_set))); end
     for o_per = 1:length(o_per_set)
     for n = 1:length(nu_set)
     for l = 1: length(lam_set)
@@ -64,7 +64,7 @@ if optdata.gpu,  acc_all = gpu(zeros(length(o_per_set), length(nu_set)), length(
     dt = datestr(datetime);
     dt((datestr(dt) == ':')) = '_'; % for windows computer
     filenamedt = ['sdrpca1_acc',dt];
-    save(filenamedt, 'acc_all');
+    save(filenamedt, 'av_acc');
     end
     end
     end    

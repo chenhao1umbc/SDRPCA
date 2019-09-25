@@ -33,8 +33,8 @@ for iter = 1:opt.maxiter
     end
     
     if iter> 10
-    if(abs(c1(iter) - c1(iter-10))/abs(c1(iter)) <1e-3) &&...
-            (abs(c2(iter) - c2(iter-10))/abs(c2(iter)) <1e-3)
+    if(abs(c1(iter) - c1(iter-1))/abs(c1(iter)+1e-30) <1e-3) &&...
+            (abs(c2(iter) - c2(iter-1))/abs(c2(iter)+1e-30) <1e-3)
         iter
         break;
     end
