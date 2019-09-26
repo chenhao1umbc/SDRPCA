@@ -12,7 +12,7 @@ else
     [v, index] = sort(diag(D),'descend'); 
     
     threshold = 1e4;
-    min_s = v(1)/threshold;
+    min_s = v(2)/threshold;  % v(1) could be too large
     P_len = length(v(v> min_s)); % trim small eigen values    
     P_kept_len = floor(opt.percentage*P_len);
     ind_trim = index(P_len:-1:P_kept_len);
