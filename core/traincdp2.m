@@ -2,17 +2,16 @@ function [Var] = traincdp2(X, Var, opt)
 % X is the training data
 % Var is initialed variables
 %opt is options
-
-c1 = zeros(1, opt.maxiter);
-c2 = zeros(1, opt.maxiter);
+c1 = zeros(1,opt.maxiter);if opt.gpu ==1; c1 = gpu(c1); end
+c2 = zeros(1,opt.maxiter);if opt.gpu ==1; c2 = gpu(c2); end
 if opt.calcost
-    orig = zeros(1, opt.maxiter);
-    alm = zeros(1, opt.maxiter);
-    obj1 = zeros(1, opt.maxiter);
-    obj2 = zeros(1, opt.maxiter);
-    obj3 = zeros(1, opt.maxiter);
-    obj4 = zeros(1, opt.maxiter);
-    sparsity = zeros(1, opt.maxiter);
+    orig = zeros(1, opt.maxiter);if opt.gpu ==1; orig = gpu(orig); end
+    alm = zeros(1, opt.maxiter);if opt.gpu ==1; alm = gpu(alm); end
+    obj1 = zeros(1, opt.maxiter);if opt.gpu ==1; obj1 = gpu(obj1); end
+    obj2 = zeros(1, opt.maxiter);if opt.gpu ==1; obj2 = gpu(obj2); end
+    obj3 = zeros(1, opt.maxiter);if opt.gpu ==1; obj3 = gpu(obj3); end
+    obj4 = zeros(1, opt.maxiter);if opt.gpu ==1; obj4 = gpu(obj4); end
+    sparsity = zeros(1, opt.maxiter);if opt.gpu ==1; sparsity = gpu(sparsity); end
 end
 
 % calc initial value for ploting 

@@ -13,11 +13,12 @@ else
     [d, ~] = size(PtPtt);
     mu_lam_2 = Var.mu/opt.lam/2;
     
-    sylA = PtPtt + eye(d)*1e-8; % make it non-singular
-    sylB = mu_lam_2*opt.prec.Ainv;
-    sylC = mu_lam_2*(Var.L + Var.Y2/Var.mu)*opt.prec.Ainv;
+    sylA = cpu(PtPtt + eye(d)*1e-8); % make it non-singular
+    sylB = cpu(mu_lam_2*opt.prec.Ainv);
+    sylC = cpu(mu_lam_2*(Var.L + Var.Y2/Var.mu)*opt.prec.Ainv);
 %     J = sylvester(sylA, sylB, sylC);
     J = lyap(sylA, sylB, -sylC);
+    if opt.gpu ==1; J = gpu(J); end
 end
 
 %     CostJ(J)
