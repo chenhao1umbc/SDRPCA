@@ -60,15 +60,15 @@ opt.prec.within = within;
 opt.prec.between = between;
 opt.prec.conv = conv;
 
-% calculate true Ptilde 
-if nargin > 2 
-    J = X0;
-    A = J*((eye(N) - H1)^2 - (H1 - H2)^2 + opt.eta*eye(N))*J';
-    B = (A+A')/2;
-    [V, D] = eig(B);
-    [v, index] = sort(diag(D),'ascend');
-    ind = index(v>1e-4);
-    opt.Pt0 = V(:,ind);    
-end
+% % calculate true Ptilde 
+% if nargin > 2 
+%     J = X0;
+%     A = J*((eye(N) - H1)^2 - (H1 - H2)^2 + opt.eta*eye(N))*J';
+%     B = (A+A')/2;
+%     [V, D] = eig(B);
+%     [v, index] = sort(diag(D),'ascend');
+%     ind = index(v>1e-4);
+%     opt.Pt0 = V(:,ind);    
+% end
 
 end % end of the file
