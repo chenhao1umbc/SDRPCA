@@ -33,12 +33,11 @@ tic
 for s = 1:3
 optdata.ind_dataset = s;% 1 is Extended Yale B, 0 is toy data
 acc_all = zeros(length(o_per_set), length(nu_set), length(lam_set));
-if optdata.gpu,  acc_all = gpu(zeros(length(o_per_set), length(nu_set)), length(lam_set)); end
+if optdata.gpu,  acc_all = gpu(zeros(length(o_per_set), length(nu_set), length(lam_set))); end
     for o_per = 1:length(o_per_set)
     for n = 1:length(nu_set)
     for l = 1: length(lam_set)
         for i = 1:cv_fold    
-            tic
         optdata.o_per = o_per_set(o_per);% outlier percentage
         optdata.rng = i; % random seed
         [X0,X0cv,X0test,T] = datgen(optdata); 
@@ -59,7 +58,6 @@ if optdata.gpu,  acc_all = gpu(zeros(length(o_per_set), length(nu_set)), length(
     acc_all(o_per, n, l) = acc/cv_fold
     disp('dataset'); disp(s); 
     acc = 0;
-    toc
     if opt.saveresult 
     dt = datestr(datetime);
     dt((datestr(dt) == ':')) = '_'; % for windows computer
