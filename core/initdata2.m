@@ -13,6 +13,7 @@ else
     opt.C = 3; % how many classes
     X = X;
 end
+opt.gpu = optdata.gpu;
 opt.maxiter = 500; % for main loop
 opt.lam = 1e-4 ; % for fisher term
 opt.nu = 0.1 ;% for norm(E, 21), norm(E,1)
@@ -22,6 +23,7 @@ opt.rho = 1.1;
 opt.tol = 5e-4;
 % opt.rank_Ptilde = opt.C;
 opt.calcost = true*0;
+opt.plotcost = true*0;
 opt.saveresult = true;
 opt.outlier_type = optdata.outlier_type; % string type 'l1' or 'l21'
 % algorithm 2
@@ -33,10 +35,10 @@ Var.P = eye(d);if optdata.gpu ==1; Var.P = gpu(Var.P); end
 Var.Ptilde = eye(d);if optdata.gpu ==1; Var.Ptilde = gpu(Var.Ptilde); end
 Var.E = zeros(d, N);if optdata.gpu ==1; Var.E = gpu(Var.E); end
 Var.Y1 = eye(d,N);if optdata.gpu ==1; Var.Y1 = gpu(Var.Y1); end
-Var.Y2 = eye(d,d);if optdata.gpu ==1; Var.Y2 = gpu(Var.Y2); end
+Var.Y2 = eye(d,N);if optdata.gpu ==1; Var.Y2 = gpu(Var.Y2); end
 % algorithm 2
 Var.L = X; if optdata.gpu ==1; Var.L = gpu(Var.L); end
-Var.J = eye(d);if optdata.gpu ==1; Var.J = gpu(Var.J); end
+Var.J = eye(d, N);if optdata.gpu ==1; Var.J = gpu(Var.J); end
 
 % precalculation
 C = opt.C;if optdata.gpu ==1; C = gpu(C); end
