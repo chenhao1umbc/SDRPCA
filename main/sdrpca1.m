@@ -61,7 +61,7 @@ if optdata.gpu,  acc_all = gpu(zeros(length(o_per_set), length(nu_set), length(l
     if opt.saveresult 
     dt = datestr(datetime);
     dt((datestr(dt) == ':')) = '_'; % for windows computer
-    filenamedt = ['sdrpca1_acc',dt];
+    filenamedt = ['sdrpca1_acc','dataset_',num2str(s),'_', dt];
     save(filenamedt, 'acc_all');
     end
     end
