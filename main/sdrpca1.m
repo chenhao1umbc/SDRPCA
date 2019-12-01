@@ -8,7 +8,7 @@ addpath(genpath('../../data_img'))
 % init data & and settings
 global optdata % to cooperate with existing code for GPU 
 try
-    gpuDevice(1);
+    gpuDevice(2);
     optdata.gpu = 1;
     fprintf('GPU is used \n')
 catch 

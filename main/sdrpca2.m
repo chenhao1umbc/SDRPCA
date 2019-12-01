@@ -26,21 +26,23 @@ cv_fold = 5; % 3 folds cross-validation
 [Var0, opt] = initdata2(X, optdata);
 acc = 0;
 
-nu_set = 2.^(-(-3:16));
-lam_set = 2.^(-(-3:16));
-o_per_set = 0:0.1:0.5;
-alpha = [0.001 0.01 0.1 1 10 100 1000]; 
-
+% nu_set = 2.^(-(-3:16));
+nu_set = 2.^(-(-3:7));
+% lam_set = 2.^(-(-3:16));
+lam_set = 2.^(-(-3:2:16));
+o_per_set = 0.1:0.1:0.5;
+% alpha = [0.001 0.01 0.1 1 10 100 1000]; 
+alpha = [1 10 100];
 %%
 tic
-for s = 1:3
+for s = 1
 optdata.ind_dataset = s;% 1 is Extended Yale B, 0 is toy data
 acc_all = zeros(length(o_per_set), length(nu_set), length(lam_set), length(alpha));
 if optdata.gpu,  acc_all = gpu(zeros(6, length(nu_set), length(lam_set), 7)); end
     for o_per = 1:length(o_per_set)
     for n = 1:length(nu_set)
     for l = 1: length(lam_set)
-    for a = 1:7
+    for a = 1:length(alpha)
         for i = 1:cv_fold    
         optdata.o_per = o_per_set(o_per);% outlier percentage
         optdata.rng = i; % random seed
